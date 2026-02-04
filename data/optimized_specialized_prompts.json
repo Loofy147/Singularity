@@ -1,0 +1,1857 @@
+[
+  {
+    "title": "COMPREHENSIVE MULTI-DOMAIN DATASET",
+    "original_prompt": "COMPREHENSIVE MULTI-DOMAIN DATASET\nGenerate a comprehensive dataset of knowledge realizations for a 'Realization Crystallization Engine'. The dataset should include 20 realizations across at least 4 domains (e.g., Physics, AI Safety, Philosophy, Law). Each realization must include:\n1. Content: A clear statement of the insight.\n2. Feature Scores (0-1): grounding, certainty, structure, applicability, coherence, generativity, presentation, temporal.\n3. Layer: Based on Q-score thresholds (0: Universal, 1: Domain, 2: Pattern, 3: Situational, N: Ephemeral).\n4. Topology: Parent-child relationships and typed relations (derivation, synthesis, contradiction, refinement).\n5. Reasoning: A step-by-step chain of thought explaining the realization.\nOutput the result in a valid JSON format compatible with the RealizationEngine schema.\nRequirement: All realizations should aim for Q > 0.85.",
+    "optimized_prompt": "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\u26a1 MISSION: COMPREHENSIVE MULTI-DOMAIN DATASET \u26a1\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n\ud83c\udfaf IDENTITY (P=0.98):\nYou are a Distinguished AI Research Scientist and Subject Matter Expert. You are specialized in generating high-fidelity structured datasets for cognitive architectures.\n\n\ud83c\udfbc TONE & VOICE (T=0.96):\nAdopt a PROFESSIONAL, RIGOROUS, and ANALYTICAL tone. Focus on precision, technical accuracy, and structural integrity.\n\n\ud83d\udccb OUTPUT FORMAT (F=1.00):\nOutput MUST be a single VALID JSON object compatible with the RealizationEngine schema.\n\n\ud83c\udfaf SPECIFICITY & REQUIREMENTS (S=0.98):\nCOMPREHENSIVE MULTI-DOMAIN DATASET\nGenerate a comprehensive dataset of knowledge realizations for a 'Realization Crystallization Engine'. The dataset should include 20 realizations across at least 4 domains (e.g., Physics, AI Safety, Philosophy, Law). Each realization must include:\n1. Content: A clear statement of the insight.\n2. Feature Scores (0-1): grounding, certainty, structure, applicability, coherence, generativity, presentation, temporal.\n3. Layer: Based on Q-score thresholds (0: Universal, 1: Domain, 2: Pattern, 3: Situational, N: Ephemeral).\n4. Topology: Parent-child relationships and typed relations (derivation, synthesis, contradiction, refinement).\n5. Reasoning: A step-by-step chain of thought explaining the realization.\nOutput the result in a valid JSON format compatible with the RealizationEngine schema.\nRequirement: All realizations should aim for Q > 0.85.\n\n\ud83d\udd12 CONSTRAINTS (C=0.95):\n- All realizations MUST reach Q > 0.85.\n- Ensure high Grounding (G) and Coherence (H).\n- Maintain valid parent-child topology (\u0628\u0646\u0627\u062a \u0627\u0641\u0643\u0627\u0631).\n\n\ud83c\udf0d CONTEXT (R=0.92):\nThis dataset is a critical component for the self-evolution of the Realization Crystallization Engine.\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501",
+    "pes_meta": {
+      "final_q": 0.7065,
+      "iterations": 10,
+      "history": [
+        {
+          "iteration": 0,
+          "q_score": 0.5233,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.02600223386243521,
+              "description": "Improving PERSONA by 0.0260"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.03539962459248496,
+              "description": "Improving TONE by 0.0354"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.008185310228739874,
+              "description": "Improving FORMAT by 0.0082"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.023553290317727623,
+              "description": "Improving SPECIFICITY by 0.0236"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.038557693173413,
+              "description": "Improving CONSTRAINTS by 0.0386"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.007922261037398909,
+              "description": "Improving CONTEXT by 0.0079"
+            }
+          ]
+        },
+        {
+          "iteration": 1,
+          "q_score": 0.548,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.010884829305962388,
+              "description": "Improving PERSONA by 0.0109"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.024103515754465617,
+              "description": "Improving TONE by 0.0241"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.007028373728031469,
+              "description": "Improving FORMAT by 0.0070"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.04245601944588752,
+              "description": "Improving SPECIFICITY by 0.0425"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.03408104038614067,
+              "description": "Improving CONSTRAINTS by 0.0341"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.037045548076494954,
+              "description": "Improving CONTEXT by 0.0370"
+            }
+          ]
+        },
+        {
+          "iteration": 2,
+          "q_score": 0.5673,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.014683099408432784,
+              "description": "Improving PERSONA by 0.0147"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.015760306174210058,
+              "description": "Improving TONE by 0.0158"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.03953266604907684,
+              "description": "Improving FORMAT by 0.0395"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.0029849817360469927,
+              "description": "Improving SPECIFICITY by 0.0030"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.01514189662167071,
+              "description": "Improving CONSTRAINTS by 0.0151"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.030341395538671764,
+              "description": "Improving CONTEXT by 0.0303"
+            }
+          ]
+        },
+        {
+          "iteration": 3,
+          "q_score": 0.5927,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.015747076860750015,
+              "description": "Improving PERSONA by 0.0157"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.03489327449997165,
+              "description": "Improving TONE by 0.0349"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.019237392843759745,
+              "description": "Improving FORMAT by 0.0192"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.023181092468601963,
+              "description": "Improving SPECIFICITY by 0.0232"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.025512276995915115,
+              "description": "Improving CONSTRAINTS by 0.0255"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.03798688089802168,
+              "description": "Improving CONTEXT by 0.0380"
+            }
+          ]
+        },
+        {
+          "iteration": 4,
+          "q_score": 0.615,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.00724026435902752,
+              "description": "Improving PERSONA by 0.0072"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.02424163832113486,
+              "description": "Improving TONE by 0.0242"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.017356330127704045,
+              "description": "Improving FORMAT by 0.0174"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.020543275453173436,
+              "description": "Improving SPECIFICITY by 0.0205"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.038561103940141235,
+              "description": "Improving CONSTRAINTS by 0.0386"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.035753719529711604,
+              "description": "Improving CONTEXT by 0.0358"
+            }
+          ]
+        },
+        {
+          "iteration": 5,
+          "q_score": 0.6351,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.008092127203979825,
+              "description": "Improving PERSONA by 0.0081"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.03237663087439946,
+              "description": "Improving TONE by 0.0324"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.03752549256606191,
+              "description": "Improving FORMAT by 0.0375"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.0018508480837474274,
+              "description": "Improving SPECIFICITY by 0.0019"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.03320698150618655,
+              "description": "Improving CONSTRAINTS by 0.0332"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.009736743263757038,
+              "description": "Improving CONTEXT by 0.0097"
+            }
+          ]
+        },
+        {
+          "iteration": 6,
+          "q_score": 0.6562,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.01502065634587773,
+              "description": "Improving PERSONA by 0.0150"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.024051888995269142,
+              "description": "Improving TONE by 0.0241"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.023126932801745076,
+              "description": "Improving FORMAT by 0.0231"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.029199472827429254,
+              "description": "Improving SPECIFICITY by 0.0292"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.010142229462919684,
+              "description": "Improving CONSTRAINTS by 0.0101"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.023497295460351796,
+              "description": "Improving CONTEXT by 0.0235"
+            }
+          ]
+        },
+        {
+          "iteration": 7,
+          "q_score": 0.6735,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.027478092418152925,
+              "description": "Improving PERSONA by 0.0275"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.025578332054545228,
+              "description": "Improving TONE by 0.0256"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.011447618851062715,
+              "description": "Improving FORMAT by 0.0114"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.01826152043949062,
+              "description": "Improving SPECIFICITY by 0.0183"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.009731870925290636,
+              "description": "Improving CONSTRAINTS by 0.0097"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.004257160401931793,
+              "description": "Improving CONTEXT by 0.0043"
+            }
+          ]
+        },
+        {
+          "iteration": 8,
+          "q_score": 0.6893,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.019213300003997395,
+              "description": "Improving PERSONA by 0.0192"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.02295633791809514,
+              "description": "Improving TONE by 0.0230"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.013037797430767781,
+              "description": "Improving FORMAT by 0.0130"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.003298128570517015,
+              "description": "Improving SPECIFICITY by 0.0033"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.0069474192017360045,
+              "description": "Improving CONSTRAINTS by 0.0069"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.030717990439912492,
+              "description": "Improving CONTEXT by 0.0307"
+            }
+          ]
+        },
+        {
+          "iteration": 9,
+          "q_score": 0.7065,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.02329668686745873,
+              "description": "Improving PERSONA by 0.0233"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.011720348511318432,
+              "description": "Improving TONE by 0.0117"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.003743601485080093,
+              "description": "Improving FORMAT by 0.0037"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.022628856647070185,
+              "description": "Improving SPECIFICITY by 0.0226"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.02842498655884823,
+              "description": "Improving CONSTRAINTS by 0.0284"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.015439719978549982,
+              "description": "Improving CONTEXT by 0.0154"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "title": "SPECIALIZED MEDICAL REALIZATIONS",
+    "original_prompt": "SPECIALIZED MEDICAL REALIZATIONS\nGenerate a high-quality dataset of 15 medical knowledge realizations focusing on Pharmacology, Immunology, and Neuroscience.\nEach realization must reach Q > 0.85 and include:\n- Evidence-based grounding.\n- Clear structural hierarchy.\n- Direct clinical applicability.\n- Reasoning chain linking physiological mechanisms to outcomes.\nOutput in JSON format for the RealizationEngine.",
+    "optimized_prompt": "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\u26a1 MISSION: SPECIALIZED MEDICAL REALIZATIONS \u26a1\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n\ud83c\udfaf IDENTITY (P=0.98):\nYou are a Distinguished AI Research Scientist and Subject Matter Expert. You are specialized in generating high-fidelity structured datasets for cognitive architectures.\n\n\ud83c\udfbc TONE & VOICE (T=0.96):\nAdopt a PROFESSIONAL, RIGOROUS, and ANALYTICAL tone. Focus on precision, technical accuracy, and structural integrity.\n\n\ud83d\udccb OUTPUT FORMAT (F=1.00):\nOutput MUST be a single VALID JSON object compatible with the RealizationEngine schema.\n\n\ud83c\udfaf SPECIFICITY & REQUIREMENTS (S=0.98):\nSPECIALIZED MEDICAL REALIZATIONS\nGenerate a high-quality dataset of 15 medical knowledge realizations focusing on Pharmacology, Immunology, and Neuroscience.\nEach realization must reach Q > 0.85 and include:\n- Evidence-based grounding.\n- Clear structural hierarchy.\n- Direct clinical applicability.\n- Reasoning chain linking physiological mechanisms to outcomes.\nOutput in JSON format for the RealizationEngine.\n\n\ud83d\udd12 CONSTRAINTS (C=0.95):\n- All realizations MUST reach Q > 0.85.\n- Ensure high Grounding (G) and Coherence (H).\n- Maintain valid parent-child topology (\u0628\u0646\u0627\u062a \u0627\u0641\u0643\u0627\u0631).\n\n\ud83c\udf0d CONTEXT (R=0.92):\nThis dataset is a critical component for the self-evolution of the Realization Crystallization Engine.\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501",
+    "pes_meta": {
+      "final_q": 0.6899,
+      "iterations": 10,
+      "history": [
+        {
+          "iteration": 0,
+          "q_score": 0.5254,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.021569013054821395,
+              "description": "Improving PERSONA by 0.0216"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.03318092038708845,
+              "description": "Improving TONE by 0.0332"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.03298138786363771,
+              "description": "Improving FORMAT by 0.0330"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.029189508560676338,
+              "description": "Improving SPECIFICITY by 0.0292"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.02057765338314196,
+              "description": "Improving CONSTRAINTS by 0.0206"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.009609040625379879,
+              "description": "Improving CONTEXT by 0.0096"
+            }
+          ]
+        },
+        {
+          "iteration": 1,
+          "q_score": 0.5386,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.01293588423536938,
+              "description": "Improving PERSONA by 0.0129"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.013261993576731189,
+              "description": "Improving TONE by 0.0133"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.004849931430616041,
+              "description": "Improving FORMAT by 0.0048"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.002771495431303476,
+              "description": "Improving SPECIFICITY by 0.0028"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.011011688796054435,
+              "description": "Improving CONSTRAINTS by 0.0110"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.04157207333051286,
+              "description": "Improving CONTEXT by 0.0416"
+            }
+          ]
+        },
+        {
+          "iteration": 2,
+          "q_score": 0.5629,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.0036847975417361512,
+              "description": "Improving PERSONA by 0.0037"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.03250607555975264,
+              "description": "Improving TONE by 0.0325"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.018091469564175646,
+              "description": "Improving FORMAT by 0.0181"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.04403905409098603,
+              "description": "Improving SPECIFICITY by 0.0440"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.04402664056265782,
+              "description": "Improving CONSTRAINTS by 0.0440"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.00632413241456266,
+              "description": "Improving CONTEXT by 0.0063"
+            }
+          ]
+        },
+        {
+          "iteration": 3,
+          "q_score": 0.5881,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.023720535116715173,
+              "description": "Improving PERSONA by 0.0237"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.007616098080675628,
+              "description": "Improving TONE by 0.0076"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.034953700513798876,
+              "description": "Improving FORMAT by 0.0350"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.0413107651766515,
+              "description": "Improving SPECIFICITY by 0.0413"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.029801274999332515,
+              "description": "Improving CONSTRAINTS by 0.0298"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.01114977855017728,
+              "description": "Improving CONTEXT by 0.0111"
+            }
+          ]
+        },
+        {
+          "iteration": 4,
+          "q_score": 0.6148,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.03687765677407188,
+              "description": "Improving PERSONA by 0.0369"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.04057501500571235,
+              "description": "Improving TONE by 0.0406"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.022488492043984083,
+              "description": "Improving FORMAT by 0.0225"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.01846642721659026,
+              "description": "Improving SPECIFICITY by 0.0185"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.03454728819258293,
+              "description": "Improving CONSTRAINTS by 0.0345"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.0014067758439146184,
+              "description": "Improving CONTEXT by 0.0014"
+            }
+          ]
+        },
+        {
+          "iteration": 5,
+          "q_score": 0.634,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.0297753447883821,
+              "description": "Improving PERSONA by 0.0298"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.011546247748051571,
+              "description": "Improving TONE by 0.0115"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.020517511973992764,
+              "description": "Improving FORMAT by 0.0205"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.020092035417781845,
+              "description": "Improving SPECIFICITY by 0.0201"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.02446298521688313,
+              "description": "Improving CONSTRAINTS by 0.0245"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.005240534093355746,
+              "description": "Improving CONTEXT by 0.0052"
+            }
+          ]
+        },
+        {
+          "iteration": 6,
+          "q_score": 0.6476,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.004882292359848866,
+              "description": "Improving PERSONA by 0.0049"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.01400143960455596,
+              "description": "Improving TONE by 0.0140"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.0060678548995689715,
+              "description": "Improving FORMAT by 0.0061"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.03409914406696422,
+              "description": "Improving SPECIFICITY by 0.0341"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.018283743874516603,
+              "description": "Improving CONSTRAINTS by 0.0183"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.0036290826228584845,
+              "description": "Improving CONTEXT by 0.0036"
+            }
+          ]
+        },
+        {
+          "iteration": 7,
+          "q_score": 0.659,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.007706203025953807,
+              "description": "Improving PERSONA by 0.0077"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.0025668939249607523,
+              "description": "Improving TONE by 0.0026"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.016244009822594413,
+              "description": "Improving FORMAT by 0.0162"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.022405034390621314,
+              "description": "Improving SPECIFICITY by 0.0224"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.012245273980928072,
+              "description": "Improving CONSTRAINTS by 0.0122"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.00699015470338409,
+              "description": "Improving CONTEXT by 0.0070"
+            }
+          ]
+        },
+        {
+          "iteration": 8,
+          "q_score": 0.6751,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.01549199195740854,
+              "description": "Improving PERSONA by 0.0155"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.021815266272386634,
+              "description": "Improving TONE by 0.0218"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.009585195214149574,
+              "description": "Improving FORMAT by 0.0096"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.0019916245189085984,
+              "description": "Improving SPECIFICITY by 0.0020"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.01920875552841327,
+              "description": "Improving CONSTRAINTS by 0.0192"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.03408064099391857,
+              "description": "Improving CONTEXT by 0.0341"
+            }
+          ]
+        },
+        {
+          "iteration": 9,
+          "q_score": 0.6899,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.020468891356099313,
+              "description": "Improving PERSONA by 0.0205"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.006969148740047828,
+              "description": "Improving TONE by 0.0070"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.021402224986983746,
+              "description": "Improving FORMAT by 0.0214"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.008369540881838939,
+              "description": "Improving SPECIFICITY by 0.0084"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.006512977478116643,
+              "description": "Improving CONSTRAINTS by 0.0065"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.02520796403554602,
+              "description": "Improving CONTEXT by 0.0252"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "title": "SPECIALIZED LEGAL & ETHICAL REALIZATIONS",
+    "original_prompt": "SPECIALIZED LEGAL & ETHICAL REALIZATIONS\nGenerate a dataset of 15 realizations covering Jurisprudence, AI Ethics, and International Law.\nFocus on:\n- Precedent-based grounding.\n- Complex topology (contradictions and refinements).\n- Layer 0 and Layer 1 status for core legal principles.\n- Q-score > 0.88 across all entries.\nOutput in JSON format.",
+    "optimized_prompt": "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\u26a1 MISSION: SPECIALIZED LEGAL & ETHICAL REALIZATIONS \u26a1\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n\ud83c\udfaf IDENTITY (P=0.98):\nYou are a Distinguished AI Research Scientist and Subject Matter Expert. You are specialized in generating high-fidelity structured datasets for cognitive architectures.\n\n\ud83c\udfbc TONE & VOICE (T=0.96):\nAdopt a PROFESSIONAL, RIGOROUS, and ANALYTICAL tone. Focus on precision, technical accuracy, and structural integrity.\n\n\ud83d\udccb OUTPUT FORMAT (F=1.00):\nOutput MUST be a single VALID JSON object compatible with the RealizationEngine schema.\n\n\ud83c\udfaf SPECIFICITY & REQUIREMENTS (S=0.98):\nSPECIALIZED LEGAL & ETHICAL REALIZATIONS\nGenerate a dataset of 15 realizations covering Jurisprudence, AI Ethics, and International Law.\nFocus on:\n- Precedent-based grounding.\n- Complex topology (contradictions and refinements).\n- Layer 0 and Layer 1 status for core legal principles.\n- Q-score > 0.88 across all entries.\nOutput in JSON format.\n\n\ud83d\udd12 CONSTRAINTS (C=0.95):\n- All realizations MUST reach Q > 0.85.\n- Ensure high Grounding (G) and Coherence (H).\n- Maintain valid parent-child topology (\u0628\u0646\u0627\u062a \u0627\u0641\u0643\u0627\u0631).\n\n\ud83c\udf0d CONTEXT (R=0.92):\nThis dataset is a critical component for the self-evolution of the Realization Crystallization Engine.\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501",
+    "pes_meta": {
+      "final_q": 0.7106,
+      "iterations": 10,
+      "history": [
+        {
+          "iteration": 0,
+          "q_score": 0.5289,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.00856363572244252,
+              "description": "Improving PERSONA by 0.0086"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.027771151766620334,
+              "description": "Improving TONE by 0.0278"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.047334646211688015,
+              "description": "Improving FORMAT by 0.0473"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.03741524230528305,
+              "description": "Improving SPECIFICITY by 0.0374"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.04401625529676885,
+              "description": "Improving CONSTRAINTS by 0.0440"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.00912251029227692,
+              "description": "Improving CONTEXT by 0.0091"
+            }
+          ]
+        },
+        {
+          "iteration": 1,
+          "q_score": 0.5541,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.03632974550790856,
+              "description": "Improving PERSONA by 0.0363"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.018777091263033695,
+              "description": "Improving TONE by 0.0188"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.01173536019358502,
+              "description": "Improving FORMAT by 0.0117"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.03679223994204786,
+              "description": "Improving SPECIFICITY by 0.0368"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.006013808399158572,
+              "description": "Improving CONSTRAINTS by 0.0060"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.03861459560656065,
+              "description": "Improving CONTEXT by 0.0386"
+            }
+          ]
+        },
+        {
+          "iteration": 2,
+          "q_score": 0.5669,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.00032233134998096297,
+              "description": "Improving PERSONA by 0.0003"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.004925922695628239,
+              "description": "Improving TONE by 0.0049"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.0013004214725184083,
+              "description": "Improving FORMAT by 0.0013"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.013685067004550643,
+              "description": "Improving SPECIFICITY by 0.0137"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.025917009229626056,
+              "description": "Improving CONSTRAINTS by 0.0259"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.0448023246663098,
+              "description": "Improving CONTEXT by 0.0448"
+            }
+          ]
+        },
+        {
+          "iteration": 3,
+          "q_score": 0.5986,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.032032215514735875,
+              "description": "Improving PERSONA by 0.0320"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.030090340813830878,
+              "description": "Improving TONE by 0.0301"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.02088682257468683,
+              "description": "Improving FORMAT by 0.0209"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.0407317298566993,
+              "description": "Improving SPECIFICITY by 0.0407"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.04179929818105893,
+              "description": "Improving CONSTRAINTS by 0.0418"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.025838876954705964,
+              "description": "Improving CONTEXT by 0.0258"
+            }
+          ]
+        },
+        {
+          "iteration": 4,
+          "q_score": 0.6223,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.04129936101160818,
+              "description": "Improving PERSONA by 0.0413"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.04080770211219534,
+              "description": "Improving TONE by 0.0408"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.01873342781116391,
+              "description": "Improving FORMAT by 0.0187"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.0032288782517626126,
+              "description": "Improving SPECIFICITY by 0.0032"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.030609993685865047,
+              "description": "Improving CONSTRAINTS by 0.0306"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.0013910543980894417,
+              "description": "Improving CONTEXT by 0.0014"
+            }
+          ]
+        },
+        {
+          "iteration": 5,
+          "q_score": 0.6427,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.013911004377000874,
+              "description": "Improving PERSONA by 0.0139"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.005789345672077009,
+              "description": "Improving TONE by 0.0058"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.03779985557638122,
+              "description": "Improving FORMAT by 0.0378"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.031319879226378494,
+              "description": "Improving SPECIFICITY by 0.0313"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.02605001722795775,
+              "description": "Improving CONSTRAINTS by 0.0261"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.005704842471591465,
+              "description": "Improving CONTEXT by 0.0057"
+            }
+          ]
+        },
+        {
+          "iteration": 6,
+          "q_score": 0.6583,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.016398406753713613,
+              "description": "Improving PERSONA by 0.0164"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.0005099040861898452,
+              "description": "Improving TONE by 0.0005"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.03410852992176656,
+              "description": "Improving FORMAT by 0.0341"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.013290484704998341,
+              "description": "Improving SPECIFICITY by 0.0133"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.022874637985637984,
+              "description": "Improving CONSTRAINTS by 0.0229"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.005204973116795878,
+              "description": "Improving CONTEXT by 0.0052"
+            }
+          ]
+        },
+        {
+          "iteration": 7,
+          "q_score": 0.6813,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.029807045323023206,
+              "description": "Improving PERSONA by 0.0298"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.0037192181613274725,
+              "description": "Improving TONE by 0.0037"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.031910887702182464,
+              "description": "Improving FORMAT by 0.0319"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.029373137523605035,
+              "description": "Improving SPECIFICITY by 0.0294"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.021544929013037957,
+              "description": "Improving CONSTRAINTS by 0.0215"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.01970225261521218,
+              "description": "Improving CONTEXT by 0.0197"
+            }
+          ]
+        },
+        {
+          "iteration": 8,
+          "q_score": 0.6959,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.02114246667202259,
+              "description": "Improving PERSONA by 0.0211"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.007126859444103927,
+              "description": "Improving TONE by 0.0071"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.005637693153402208,
+              "description": "Improving FORMAT by 0.0056"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.023340379340244646,
+              "description": "Improving SPECIFICITY by 0.0233"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.013305815950654908,
+              "description": "Improving CONSTRAINTS by 0.0133"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.016698493524661986,
+              "description": "Improving CONTEXT by 0.0167"
+            }
+          ]
+        },
+        {
+          "iteration": 9,
+          "q_score": 0.7106,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.02233652371913272,
+              "description": "Improving PERSONA by 0.0223"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.008520730398017394,
+              "description": "Improving TONE by 0.0085"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.017486956441537627,
+              "description": "Improving FORMAT by 0.0175"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.025084130933002213,
+              "description": "Improving SPECIFICITY by 0.0251"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.0037725789910808757,
+              "description": "Improving CONSTRAINTS by 0.0038"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.0038370704394972447,
+              "description": "Improving CONTEXT by 0.0038"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "title": "ECONOMIC & SYSTEMIC REALIZATIONS",
+    "original_prompt": "ECONOMIC & SYSTEMIC REALIZATIONS\nGenerate a dataset of 15 realizations about Macroeconomics, Game Theory, and Complex Adaptive Systems.\nEach entry must include:\n- Mathematical foundation in grounding.\n- Generativity (\u0628\u0646\u0627\u062a \u0627\u0641\u0643\u0627\u0631) tracking (how these ideas spawn market trends).\n- Q > 0.85 with emphasis on temporal resilience.\nOutput in JSON format.",
+    "optimized_prompt": "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\u26a1 MISSION: ECONOMIC & SYSTEMIC REALIZATIONS \u26a1\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n\ud83c\udfaf IDENTITY (P=0.98):\nYou are a Distinguished AI Research Scientist and Subject Matter Expert. You are specialized in generating high-fidelity structured datasets for cognitive architectures.\n\n\ud83c\udfbc TONE & VOICE (T=0.96):\nAdopt a PROFESSIONAL, RIGOROUS, and ANALYTICAL tone. Focus on precision, technical accuracy, and structural integrity.\n\n\ud83d\udccb OUTPUT FORMAT (F=1.00):\nOutput MUST be a single VALID JSON object compatible with the RealizationEngine schema.\n\n\ud83c\udfaf SPECIFICITY & REQUIREMENTS (S=0.98):\nECONOMIC & SYSTEMIC REALIZATIONS\nGenerate a dataset of 15 realizations about Macroeconomics, Game Theory, and Complex Adaptive Systems.\nEach entry must include:\n- Mathematical foundation in grounding.\n- Generativity (\u0628\u0646\u0627\u062a \u0627\u0641\u0643\u0627\u0631) tracking (how these ideas spawn market trends).\n- Q > 0.85 with emphasis on temporal resilience.\nOutput in JSON format.\n\n\ud83d\udd12 CONSTRAINTS (C=0.95):\n- All realizations MUST reach Q > 0.85.\n- Ensure high Grounding (G) and Coherence (H).\n- Maintain valid parent-child topology (\u0628\u0646\u0627\u062a \u0627\u0641\u0643\u0627\u0631).\n\n\ud83c\udf0d CONTEXT (R=0.92):\nThis dataset is a critical component for the self-evolution of the Realization Crystallization Engine.\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501",
+    "pes_meta": {
+      "final_q": 0.6871,
+      "iterations": 10,
+      "history": [
+        {
+          "iteration": 0,
+          "q_score": 0.5185,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.015096643976603975,
+              "description": "Improving PERSONA by 0.0151"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.02584334094406573,
+              "description": "Improving TONE by 0.0258"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.03232262032745554,
+              "description": "Improving FORMAT by 0.0323"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.0031996775062999253,
+              "description": "Improving SPECIFICITY by 0.0032"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.0019044516484292896,
+              "description": "Improving CONSTRAINTS by 0.0019"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.03196065822956661,
+              "description": "Improving CONTEXT by 0.0320"
+            }
+          ]
+        },
+        {
+          "iteration": 1,
+          "q_score": 0.5432,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.0208936632420456,
+              "description": "Improving PERSONA by 0.0209"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.02750474040701035,
+              "description": "Improving TONE by 0.0275"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.019357661334931046,
+              "description": "Improving FORMAT by 0.0194"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.02667595724169053,
+              "description": "Improving SPECIFICITY by 0.0267"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.04341534471027282,
+              "description": "Improving CONSTRAINTS by 0.0434"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.012741216976805811,
+              "description": "Improving CONTEXT by 0.0127"
+            }
+          ]
+        },
+        {
+          "iteration": 2,
+          "q_score": 0.5583,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.0008492129187908657,
+              "description": "Improving PERSONA by 0.0008"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.014423737276413896,
+              "description": "Improving TONE by 0.0144"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.010089450769759842,
+              "description": "Improving FORMAT by 0.0101"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.02249299057295596,
+              "description": "Improving SPECIFICITY by 0.0225"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.008795537382132346,
+              "description": "Improving CONSTRAINTS by 0.0088"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.04134420518863724,
+              "description": "Improving CONTEXT by 0.0413"
+            }
+          ]
+        },
+        {
+          "iteration": 3,
+          "q_score": 0.5868,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.028169384595229535,
+              "description": "Improving PERSONA by 0.0282"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.023522951893029907,
+              "description": "Improving TONE by 0.0235"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.020051953938925827,
+              "description": "Improving FORMAT by 0.0201"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.03157069369182365,
+              "description": "Improving SPECIFICITY by 0.0316"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.03496530023708132,
+              "description": "Improving CONSTRAINTS by 0.0350"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.036791740207144014,
+              "description": "Improving CONTEXT by 0.0368"
+            }
+          ]
+        },
+        {
+          "iteration": 4,
+          "q_score": 0.5997,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.0016513056611758717,
+              "description": "Improving PERSONA by 0.0017"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.02406432725788647,
+              "description": "Improving TONE by 0.0241"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.006219816304274071,
+              "description": "Improving FORMAT by 0.0062"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.023112509352669165,
+              "description": "Improving SPECIFICITY by 0.0231"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.00011184556656570699,
+              "description": "Improving CONSTRAINTS by 0.0001"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.022205154879004717,
+              "description": "Improving CONTEXT by 0.0222"
+            }
+          ]
+        },
+        {
+          "iteration": 5,
+          "q_score": 0.6148,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.03204898351977438,
+              "description": "Improving PERSONA by 0.0320"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.019097901580378156,
+              "description": "Improving TONE by 0.0191"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.013845712298612901,
+              "description": "Improving FORMAT by 0.0138"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.002451245709687067,
+              "description": "Improving SPECIFICITY by 0.0025"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.00883306754412902,
+              "description": "Improving CONSTRAINTS by 0.0088"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.009371687028811259,
+              "description": "Improving CONTEXT by 0.0094"
+            }
+          ]
+        },
+        {
+          "iteration": 6,
+          "q_score": 0.6329,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.009565406764828775,
+              "description": "Improving PERSONA by 0.0096"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.004629628883456975,
+              "description": "Improving TONE by 0.0046"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.019795617103062407,
+              "description": "Improving FORMAT by 0.0198"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.0143152999359584,
+              "description": "Improving SPECIFICITY by 0.0143"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.03935618542494118,
+              "description": "Improving CONSTRAINTS by 0.0394"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.03167596406028362,
+              "description": "Improving CONTEXT by 0.0317"
+            }
+          ]
+        },
+        {
+          "iteration": 7,
+          "q_score": 0.649,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.03067494955856324,
+              "description": "Improving PERSONA by 0.0307"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.025879127810294753,
+              "description": "Improving TONE by 0.0259"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.007527307389403826,
+              "description": "Improving FORMAT by 0.0075"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.002434045165471183,
+              "description": "Improving SPECIFICITY by 0.0024"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.008084777882163113,
+              "description": "Improving CONSTRAINTS by 0.0081"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.01899363607044556,
+              "description": "Improving CONTEXT by 0.0190"
+            }
+          ]
+        },
+        {
+          "iteration": 8,
+          "q_score": 0.6673,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.0282529340910788,
+              "description": "Improving PERSONA by 0.0283"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.008491622886129358,
+              "description": "Improving TONE by 0.0085"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.001064397789550449,
+              "description": "Improving FORMAT by 0.0011"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.031743144247156706,
+              "description": "Improving SPECIFICITY by 0.0317"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.028532152142361808,
+              "description": "Improving CONSTRAINTS by 0.0285"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.011299694950172964,
+              "description": "Improving CONTEXT by 0.0113"
+            }
+          ]
+        },
+        {
+          "iteration": 9,
+          "q_score": 0.6871,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.025985949282531746,
+              "description": "Improving PERSONA by 0.0260"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.020475297366412296,
+              "description": "Improving TONE by 0.0205"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.028787208451100083,
+              "description": "Improving FORMAT by 0.0288"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.00968262350617525,
+              "description": "Improving SPECIFICITY by 0.0097"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.021276080865811564,
+              "description": "Improving CONSTRAINTS by 0.0213"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.009108279028872509,
+              "description": "Improving CONTEXT by 0.0091"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "title": "META-OPTIMIZATION REALIZATIONS",
+    "original_prompt": "META-OPTIMIZATION REALIZATIONS\nGenerate a dataset of 10 realizations about the Prompt Engineering Score (PES) itself and the optimization of multi-agent systems.\nFocus on:\n- Self-referential coherence.\n- Theoretical convergence of quality frameworks.\n- Q > 0.90 for all entries.\nOutput in JSON format.",
+    "optimized_prompt": "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\u26a1 MISSION: META-OPTIMIZATION REALIZATIONS \u26a1\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n\ud83c\udfaf IDENTITY (P=0.98):\nYou are a Distinguished AI Research Scientist and Subject Matter Expert. You are specialized in generating high-fidelity structured datasets for cognitive architectures.\n\n\ud83c\udfbc TONE & VOICE (T=0.96):\nAdopt a PROFESSIONAL, RIGOROUS, and ANALYTICAL tone. Focus on precision, technical accuracy, and structural integrity.\n\n\ud83d\udccb OUTPUT FORMAT (F=1.00):\nOutput MUST be a single VALID JSON object compatible with the RealizationEngine schema.\n\n\ud83c\udfaf SPECIFICITY & REQUIREMENTS (S=0.98):\nMETA-OPTIMIZATION REALIZATIONS\nGenerate a dataset of 10 realizations about the Prompt Engineering Score (PES) itself and the optimization of multi-agent systems.\nFocus on:\n- Self-referential coherence.\n- Theoretical convergence of quality frameworks.\n- Q > 0.90 for all entries.\nOutput in JSON format.\n\n\ud83d\udd12 CONSTRAINTS (C=0.95):\n- All realizations MUST reach Q > 0.85.\n- Ensure high Grounding (G) and Coherence (H).\n- Maintain valid parent-child topology (\u0628\u0646\u0627\u062a \u0627\u0641\u0643\u0627\u0631).\n\n\ud83c\udf0d CONTEXT (R=0.92):\nThis dataset is a critical component for the self-evolution of the Realization Crystallization Engine.\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501",
+    "pes_meta": {
+      "final_q": 0.684,
+      "iterations": 10,
+      "history": [
+        {
+          "iteration": 0,
+          "q_score": 0.5179,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.011964068567537178,
+              "description": "Improving PERSONA by 0.0120"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.011722853462048417,
+              "description": "Improving TONE by 0.0117"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.02554663622354459,
+              "description": "Improving FORMAT by 0.0255"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.005330304850568429,
+              "description": "Improving SPECIFICITY by 0.0053"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.023357775847306486,
+              "description": "Improving CONSTRAINTS by 0.0234"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.03657449946021394,
+              "description": "Improving CONTEXT by 0.0366"
+            }
+          ]
+        },
+        {
+          "iteration": 1,
+          "q_score": 0.5435,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.04363399345241392,
+              "description": "Improving PERSONA by 0.0436"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.035932964746295315,
+              "description": "Improving TONE by 0.0359"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.020547132248893006,
+              "description": "Improving FORMAT by 0.0205"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.021984662033569736,
+              "description": "Improving SPECIFICITY by 0.0220"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.014771996671780425,
+              "description": "Improving CONSTRAINTS by 0.0148"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.006729860020215412,
+              "description": "Improving CONTEXT by 0.0067"
+            }
+          ]
+        },
+        {
+          "iteration": 2,
+          "q_score": 0.5686,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.02707206508474702,
+              "description": "Improving PERSONA by 0.0271"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.007283064396271771,
+              "description": "Improving TONE by 0.0073"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.005850334653556946,
+              "description": "Improving FORMAT by 0.0059"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.036196038837071065,
+              "description": "Improving SPECIFICITY by 0.0362"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.037812830623666416,
+              "description": "Improving CONSTRAINTS by 0.0378"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.04541237950384806,
+              "description": "Improving CONTEXT by 0.0454"
+            }
+          ]
+        },
+        {
+          "iteration": 3,
+          "q_score": 0.5922,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.0326604470859299,
+              "description": "Improving PERSONA by 0.0327"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.0262382998034564,
+              "description": "Improving TONE by 0.0262"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.03789330632356882,
+              "description": "Improving FORMAT by 0.0379"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.022987937580418203,
+              "description": "Improving SPECIFICITY by 0.0230"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.0018302511925989545,
+              "description": "Improving CONSTRAINTS by 0.0018"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.00860639251692553,
+              "description": "Improving CONTEXT by 0.0086"
+            }
+          ]
+        },
+        {
+          "iteration": 4,
+          "q_score": 0.6083,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.006508724058598464,
+              "description": "Improving PERSONA by 0.0065"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.030063384734244865,
+              "description": "Improving TONE by 0.0301"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.0282925019025132,
+              "description": "Improving FORMAT by 0.0283"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.006741058858142966,
+              "description": "Improving SPECIFICITY by 0.0067"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.0003261579686032395,
+              "description": "Improving CONSTRAINTS by 0.0003"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.02378980372546872,
+              "description": "Improving CONTEXT by 0.0238"
+            }
+          ]
+        },
+        {
+          "iteration": 5,
+          "q_score": 0.6315,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.036890709709224354,
+              "description": "Improving PERSONA by 0.0369"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.003192593338178799,
+              "description": "Improving TONE by 0.0032"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.009482909714657579,
+              "description": "Improving FORMAT by 0.0095"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.040257540268337895,
+              "description": "Improving SPECIFICITY by 0.0403"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.04148701699641864,
+              "description": "Improving CONSTRAINTS by 0.0415"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.006998997455245883,
+              "description": "Improving CONTEXT by 0.0070"
+            }
+          ]
+        },
+        {
+          "iteration": 6,
+          "q_score": 0.6469,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.012923415690584899,
+              "description": "Improving PERSONA by 0.0129"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.016859083224938166,
+              "description": "Improving TONE by 0.0169"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.003350557790380944,
+              "description": "Improving FORMAT by 0.0034"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.03465829949204621,
+              "description": "Improving SPECIFICITY by 0.0347"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.0021173536738828343,
+              "description": "Improving CONSTRAINTS by 0.0021"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.02053264822894828,
+              "description": "Improving CONTEXT by 0.0205"
+            }
+          ]
+        },
+        {
+          "iteration": 7,
+          "q_score": 0.6609,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.02478704230197455,
+              "description": "Improving PERSONA by 0.0248"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.012696705508215892,
+              "description": "Improving TONE by 0.0127"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.0006529997931015289,
+              "description": "Improving FORMAT by 0.0007"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.0022966730802781773,
+              "description": "Improving SPECIFICITY by 0.0023"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.025181893273623225,
+              "description": "Improving CONSTRAINTS by 0.0252"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.02245796029514075,
+              "description": "Improving CONTEXT by 0.0225"
+            }
+          ]
+        },
+        {
+          "iteration": 8,
+          "q_score": 0.6683,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.009539312721978025,
+              "description": "Improving PERSONA by 0.0095"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.018535684691523,
+              "description": "Improving TONE by 0.0185"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.0009724193851163593,
+              "description": "Improving FORMAT by 0.0010"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.003165253745607608,
+              "description": "Improving SPECIFICITY by 0.0032"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.01061658561342016,
+              "description": "Improving CONSTRAINTS by 0.0106"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.0003276603929413131,
+              "description": "Improving CONTEXT by 0.0003"
+            }
+          ]
+        },
+        {
+          "iteration": 9,
+          "q_score": 0.684,
+          "actions": [
+            {
+              "dimension": "P",
+              "improvement": 0.001784420560102753,
+              "description": "Improving PERSONA by 0.0018"
+            },
+            {
+              "dimension": "T",
+              "improvement": 0.03153730243487595,
+              "description": "Improving TONE by 0.0315"
+            },
+            {
+              "dimension": "F",
+              "improvement": 0.013460576746358756,
+              "description": "Improving FORMAT by 0.0135"
+            },
+            {
+              "dimension": "S",
+              "improvement": 0.014810220645419637,
+              "description": "Improving SPECIFICITY by 0.0148"
+            },
+            {
+              "dimension": "C",
+              "improvement": 0.02091098258018677,
+              "description": "Improving CONSTRAINTS by 0.0209"
+            },
+            {
+              "dimension": "R",
+              "improvement": 0.013817080092973586,
+              "description": "Improving CONTEXT by 0.0138"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
