@@ -1,0 +1,53 @@
+{
+  "test_name": "Paradigm Shift: Contradictory Realizations",
+  "tes_score": 0.931,
+  "phases": [
+    {
+      "name": "Newtonian Paradigm",
+      "avg_q": 0.9013333333333334,
+      "avg_coherence": 1.0
+    },
+    {
+      "name": "Einsteinian Revolution",
+      "avg_q": 0.8223333333333334,
+      "avg_coherence": 0.21666666666666667,
+      "contradiction_count": 3
+    },
+    {
+      "name": "Synthesis",
+      "q_score": 0.9194,
+      "coherence": 0.95,
+      "parents": 2
+    }
+  ],
+  "coherence_analysis": {
+    "newton_avg": 1.0,
+    "einstein_avg": 0.22,
+    "synthesis": 0.95,
+    "contradiction_drop": 0.78,
+    "synthesis_recovery": 0.73
+  },
+  "layer_evolution": {
+    "newton": [
+      2,
+      2,
+      2
+    ],
+    "einstein": [
+      3,
+      3,
+      3
+    ],
+    "synthesis": 2
+  },
+  "overall_result": "PASSED - All paradigm shift behaviors correct",
+  "tests": {
+    "passed": [
+      "Coherence dropped with contradictions",
+      "Synthesis has higher coherence",
+      "Contradictions demoted to Layer 2+",
+      "Synthesis converges multiple parents"
+    ],
+    "failed": []
+  }
+}

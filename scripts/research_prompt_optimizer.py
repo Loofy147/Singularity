@@ -497,7 +497,7 @@ def export_top_prompts(prompts: List[ResearchPrompt], top_n: int = 3):
             'prompt': prompt.prompt
         })
     
-    with open('/home/claude/top_research_prompts.json', 'w') as f:
+    with open('data/top_research_prompts.json', 'w') as f:
         json.dump(output, f, indent=2)
     
     print(f"\n✅ Top {top_n} prompts exported to top_research_prompts.json")
