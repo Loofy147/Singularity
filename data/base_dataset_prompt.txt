@@ -1,0 +1,7 @@
+Generate a comprehensive dataset of knowledge realizations for a 'Realization Crystallization Engine'. The dataset should include 20 realizations across at least 4 domains (e.g., Physics, AI Safety, Philosophy, Law). Each realization must include:
+1. Content: A clear statement of the insight.
+2. Feature Scores (0-1): grounding, certainty, structure, applicability, coherence, generativity, presentation, temporal.
+3. Layer: Based on Q-score thresholds (0: Universal, 1: Domain, 2: Pattern, 3: Situational, N: Ephemeral).
+4. Topology: Parent-child relationships and typed relations (derivation, synthesis, contradiction, refinement).
+5. Reasoning: A step-by-step chain of thought explaining the realization.
+Output the result in a valid JSON format compatible with the RealizationEngine schema.
