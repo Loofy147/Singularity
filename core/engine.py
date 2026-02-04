@@ -1,8 +1,8 @@
 """
-REALIZATION ENGINE (V3.1) - EMERGENT UQS EDITION
-================================================
-Evolved with 12 dimensions including predicted emergents:
-D7 (Density), D8 (Synthesis), D9 (Resilience), D10 (Transferability).
+REALIZATION ENGINE (V3.2) - ROBUSTNESS & HARD CASE EDITION
+==========================================================
+Evolved with 13 dimensions including Robustness (D13) to handle
+adversarial attacks and paradigm shifts.
 """
 
 import json
@@ -17,16 +17,17 @@ import hashlib
 class RealizationFeatures:
     """
     Quality features of a realization.
-    Supports 12-dimension UQS including emergents.
+    Supports 13-dimension UQS including robustness.
     """
     def __init__(self, scores: Optional[Dict[str, float]] = None, **kwargs):
         self.scores = scores or {}
         self.scores.update(kwargs)
-        # Ensure all 12 dims have a value
+        # Ensure all 13 dims have a value
         dimensions = [
             'grounding', 'certainty', 'structure', 'applicability',
             'coherence', 'generativity', 'presentation', 'temporal',
-            'density', 'synthesis', 'resilience', 'transferability'
+            'density', 'synthesis', 'resilience', 'transferability',
+            'robustness'
         ]
         for dim in dimensions:
             if dim not in self.scores:
@@ -56,6 +57,8 @@ class RealizationFeatures:
     def resilience(self): return self.scores.get('resilience', 0.5)
     @property
     def transferability(self): return self.scores.get('transferability', 0.5)
+    @property
+    def robustness(self): return self.scores.get('robustness', 0.5)
 
     def validate(self):
         """Ensure all scores are in [0, 1] range."""
@@ -68,7 +71,7 @@ class RealizationFeatures:
                   applicability: float, coherence: float, generativity: float,
                   presentation: float, temporal: float, density: float = 0.5,
                   synthesis: float = 0.5, resilience: float = 0.5,
-                  transferability: float = 0.5):
+                  transferability: float = 0.5, robustness: float = 0.5):
         return cls(scores={
             'grounding': grounding,
             'certainty': certainty,
@@ -81,7 +84,8 @@ class RealizationFeatures:
             'density': density,
             'synthesis': synthesis,
             'resilience': resilience,
-            'transferability': transferability
+            'transferability': transferability,
+            'robustness': robustness
         })
 
     @classmethod
@@ -156,14 +160,14 @@ class Realization:
 
 class RealizationEngine:
     """
-    Advanced engine implementing the Universal Quality Score (UQS) with emergents.
+    Advanced engine implementing the Universal Quality Score (UQS) with Robustness.
     """
 
     UQS_DIMENSIONS = {
-        'grounding': QualityDimension('Grounding/Persona', 'Rootedness in facts/rules', 0.15),
-        'certainty': QualityDimension('Certainty', 'Self-certifying precision', 0.18),
-        'structure': QualityDimension('Structure/Specificity', 'Crystallization clarity', 0.15),
-        'applicability': QualityDimension('Applicability', 'Actionability/usefulness', 0.14),
+        'grounding': QualityDimension('Grounding/Persona', 'Rootedness in facts/rules', 0.14),
+        'certainty': QualityDimension('Certainty', 'Self-certifying precision', 0.16),
+        'structure': QualityDimension('Structure/Specificity', 'Crystallization clarity', 0.14),
+        'applicability': QualityDimension('Applicability', 'Actionability/usefulness', 0.12),
         'coherence': QualityDimension('Coherence/Context', 'Consistency with prior knowledge', 0.10),
         'generativity': QualityDimension('Generativity', 'Daughter idea potential', 0.07),
         'presentation': QualityDimension('Presentation', 'Format and tone quality', 0.04),
@@ -171,7 +175,8 @@ class RealizationEngine:
         'density': QualityDimension('بنات افكار Density', 'Rate of spawning daughters', 0.05, discovered_by='singularity'),
         'synthesis': QualityDimension('Convergence Synthesis', 'Multi-parent integration quality', 0.04, discovered_by='singularity'),
         'resilience': QualityDimension('Temporal Resilience', 'Stability across paradigm shifts', 0.03, discovered_by='singularity'),
-        'transferability': QualityDimension('Cross-Domain Transferability', 'Applicability across fields', 0.02, discovered_by='singularity')
+        'transferability': QualityDimension('Cross-Domain Transferability', 'Applicability across fields', 0.02, discovered_by='singularity'),
+        'robustness': QualityDimension('Adversarial Robustness', 'Resistance to manipulation/nonsense', 0.06, discovered_by='singularity')
     }
 
     def __init__(self, dimensions: Optional[Dict[str, QualityDimension]] = None):
@@ -249,7 +254,7 @@ class RealizationEngine:
 
     def print_stats(self):
         print("\n" + "="*60)
-        print("EMERGENT UQS REALIZATION ENGINE STATISTICS")
+        print("ROBUST UQS REALIZATION ENGINE STATISTICS")
         print("="*60)
         print(f"Total Realizations: {self.stats['total_realizations']}")
         print(f"Average Q-Score: {self.stats['avg_q_score']:.4f}")
@@ -303,4 +308,4 @@ class RealizationEngine:
 
 if __name__ == "__main__":
     engine = RealizationEngine()
-    print("Emergent UQS Engine initialized.")
+    print("Robust UQS Engine V3.2 initialized.")

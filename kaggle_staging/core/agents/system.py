@@ -1,7 +1,7 @@
 """
-UQS MULTI-AGENT SYSTEM
-======================
-Managed multi-agent system for knowledge optimization using the 12-dimension UQS framework.
+UQS MULTI-AGENT SYSTEM (V3.2)
+=============================
+Managed multi-agent system for knowledge optimization using the 13-dimension UQS framework.
 """
 
 import sys
@@ -32,13 +32,14 @@ class UQSDimension(str, Enum):
     SYNTHESIS = "synthesis"
     RESILIENCE = "resilience"
     TRANSFERABILITY = "transferability"
+    ROBUSTNESS = "robustness"
 
-# Weights from core/engine.py
+# Weights from core/engine.py (V3.2)
 UQS_WEIGHTS = {
-    UQSDimension.GROUNDING: 0.15,
-    UQSDimension.CERTAINTY: 0.18,
-    UQSDimension.STRUCTURE: 0.15,
-    UQSDimension.APPLICABILITY: 0.14,
+    UQSDimension.GROUNDING: 0.14,
+    UQSDimension.CERTAINTY: 0.16,
+    UQSDimension.STRUCTURE: 0.14,
+    UQSDimension.APPLICABILITY: 0.12,
     UQSDimension.COHERENCE: 0.10,
     UQSDimension.GENERATIVITY: 0.07,
     UQSDimension.PRESENTATION: 0.04,
@@ -46,7 +47,8 @@ UQS_WEIGHTS = {
     UQSDimension.DENSITY: 0.05,
     UQSDimension.SYNTHESIS: 0.04,
     UQSDimension.RESILIENCE: 0.03,
-    UQSDimension.TRANSFERABILITY: 0.02
+    UQSDimension.TRANSFERABILITY: 0.02,
+    UQSDimension.ROBUSTNESS: 0.06
 }
 
 @dataclass
@@ -64,12 +66,13 @@ class BaseAgent:
         # Heuristic-based action
         current_score = state.scores.get(self.dimension, 0.5)
 
-        # Emerging dimensions (D7-D10) are harder to optimize
-        is_emergent = self.dimension in [
+        # Emerging and Hard-Case dimensions (D7-D13) are harder to optimize
+        is_hard = self.dimension in [
             UQSDimension.DENSITY, UQSDimension.SYNTHESIS,
-            UQSDimension.RESILIENCE, UQSDimension.TRANSFERABILITY
+            UQSDimension.RESILIENCE, UQSDimension.TRANSFERABILITY,
+            UQSDimension.ROBUSTNESS
         ]
-        difficulty = 0.5 if is_emergent else 1.0
+        difficulty = 0.4 if is_hard else 1.0
 
         improvement = (1.0 - current_score) * 0.1 * np.random.random() * difficulty
 
@@ -84,9 +87,9 @@ class MultiAgentCoordinator:
         self.agents = {d: BaseAgent(d) for d in UQSDimension}
         self.engine = RealizationEngine()
 
-        logger.info("Multi-Agent Coordinator initialized with 12 UQS dimensions")
+        logger.info("Multi-Agent Coordinator initialized with 13 UQS dimensions")
 
-    def optimize_knowledge(self, initial_text: str, target_q: float = 0.90, max_iterations: int = 15) -> Tuple[str, Dict[str, Any]]:
+    def optimize_knowledge(self, initial_text: str, target_q: float = 0.90, max_iterations: int = 20) -> Tuple[str, Dict[str, Any]]:
         current_text = initial_text
         current_scores = {d: 0.5 for d in UQSDimension}
 
@@ -129,7 +132,7 @@ class MultiAgentCoordinator:
             content=current_text,
             features=RealizationFeatures(scores={d.value: current_scores[d] for d in UQSDimension}),
             turn_number=max_iterations,
-            context="UQS 12-agent optimization"
+            context="UQS 13-agent optimization (Hard Case Study Edition)"
         )
 
         return current_text, {
@@ -142,7 +145,7 @@ class MultiAgentCoordinator:
 
 if __name__ == "__main__":
     coordinator = MultiAgentCoordinator()
-    optimized, meta = coordinator.optimize_knowledge("Knowledge about بنات افكار (daughters of ideas).")
+    optimized, meta = coordinator.optimize_knowledge("Handling adversarial knowledge attacks.")
     print(f"\nFinal Q-score: {meta['final_q']:.4f} (Layer {meta['final_layer']})")
     print(f"Iterations: {meta['iterations']}")
     print(f"Realization ID: {meta['realization_id']}")
