@@ -1,8 +1,8 @@
 """
-REALIZATION ENGINE (V3) - UNIVERSAL QUALITY SCORE (UQS) EDITION
-===============================================================
-The foundational system for managing crystallized knowledge, now
-evolved with 8-dimension UQS and reasoning-aware topology.
+REALIZATION ENGINE (V3.1) - EMERGENT UQS EDITION
+================================================
+Evolved with 12 dimensions including predicted emergents:
+D7 (Density), D8 (Synthesis), D9 (Resilience), D10 (Transferability).
 """
 
 import json
@@ -17,14 +17,18 @@ import hashlib
 class RealizationFeatures:
     """
     Quality features of a realization.
-    Supports 8-dimension UQS (G, C, S, A, H, V, P, T).
+    Supports 12-dimension UQS including emergents.
     """
     def __init__(self, scores: Optional[Dict[str, float]] = None, **kwargs):
         self.scores = scores or {}
         self.scores.update(kwargs)
-        # Ensure all 8 dims have a value
-        for dim in ['grounding', 'certainty', 'structure', 'applicability',
-                    'coherence', 'generativity', 'presentation', 'temporal']:
+        # Ensure all 12 dims have a value
+        dimensions = [
+            'grounding', 'certainty', 'structure', 'applicability',
+            'coherence', 'generativity', 'presentation', 'temporal',
+            'density', 'synthesis', 'resilience', 'transferability'
+        ]
+        for dim in dimensions:
             if dim not in self.scores:
                 self.scores[dim] = 0.5
 
@@ -44,6 +48,14 @@ class RealizationFeatures:
     def presentation(self): return self.scores.get('presentation', 0.5)
     @property
     def temporal(self): return self.scores.get('temporal', 0.5)
+    @property
+    def density(self): return self.scores.get('density', 0.5)
+    @property
+    def synthesis(self): return self.scores.get('synthesis', 0.5)
+    @property
+    def resilience(self): return self.scores.get('resilience', 0.5)
+    @property
+    def transferability(self): return self.scores.get('transferability', 0.5)
 
     def validate(self):
         """Ensure all scores are in [0, 1] range."""
@@ -54,7 +66,9 @@ class RealizationFeatures:
     @classmethod
     def from_uqs(cls, grounding: float, certainty: float, structure: float,
                   applicability: float, coherence: float, generativity: float,
-                  presentation: float, temporal: float):
+                  presentation: float, temporal: float, density: float = 0.5,
+                  synthesis: float = 0.5, resilience: float = 0.5,
+                  transferability: float = 0.5):
         return cls(scores={
             'grounding': grounding,
             'certainty': certainty,
@@ -63,7 +77,11 @@ class RealizationFeatures:
             'coherence': coherence,
             'generativity': generativity,
             'presentation': presentation,
-            'temporal': temporal
+            'temporal': temporal,
+            'density': density,
+            'synthesis': synthesis,
+            'resilience': resilience,
+            'transferability': transferability
         })
 
     @classmethod
@@ -138,18 +156,22 @@ class Realization:
 
 class RealizationEngine:
     """
-    Advanced engine implementing the Universal Quality Score (UQS).
+    Advanced engine implementing the Universal Quality Score (UQS) with emergents.
     """
 
     UQS_DIMENSIONS = {
-        'grounding': QualityDimension('Grounding/Persona', 'Rootedness in facts/rules', 0.18),
-        'certainty': QualityDimension('Certainty', 'Self-certifying precision', 0.20),
-        'structure': QualityDimension('Structure/Specificity', 'Crystallization clarity', 0.18),
-        'applicability': QualityDimension('Applicability', 'Actionability/usefulness', 0.16),
-        'coherence': QualityDimension('Coherence/Context', 'Consistency with prior knowledge', 0.12),
-        'generativity': QualityDimension('Generativity', 'Daughter idea potential', 0.08),
-        'presentation': QualityDimension('Presentation', 'Format and tone quality', 0.05),
-        'temporal': QualityDimension('Temporal', 'Resilience over time', 0.03)
+        'grounding': QualityDimension('Grounding/Persona', 'Rootedness in facts/rules', 0.15),
+        'certainty': QualityDimension('Certainty', 'Self-certifying precision', 0.18),
+        'structure': QualityDimension('Structure/Specificity', 'Crystallization clarity', 0.15),
+        'applicability': QualityDimension('Applicability', 'Actionability/usefulness', 0.14),
+        'coherence': QualityDimension('Coherence/Context', 'Consistency with prior knowledge', 0.10),
+        'generativity': QualityDimension('Generativity', 'Daughter idea potential', 0.07),
+        'presentation': QualityDimension('Presentation', 'Format and tone quality', 0.04),
+        'temporal': QualityDimension('Temporal', 'Resilience over time', 0.03),
+        'density': QualityDimension('بنات افكار Density', 'Rate of spawning daughters', 0.05, discovered_by='singularity'),
+        'synthesis': QualityDimension('Convergence Synthesis', 'Multi-parent integration quality', 0.04, discovered_by='singularity'),
+        'resilience': QualityDimension('Temporal Resilience', 'Stability across paradigm shifts', 0.03, discovered_by='singularity'),
+        'transferability': QualityDimension('Cross-Domain Transferability', 'Applicability across fields', 0.02, discovered_by='singularity')
     }
 
     def __init__(self, dimensions: Optional[Dict[str, QualityDimension]] = None):
@@ -227,7 +249,7 @@ class RealizationEngine:
 
     def print_stats(self):
         print("\n" + "="*60)
-        print("UQS REALIZATION ENGINE STATISTICS")
+        print("EMERGENT UQS REALIZATION ENGINE STATISTICS")
         print("="*60)
         print(f"Total Realizations: {self.stats['total_realizations']}")
         print(f"Average Q-Score: {self.stats['avg_q_score']:.4f}")
@@ -281,4 +303,4 @@ class RealizationEngine:
 
 if __name__ == "__main__":
     engine = RealizationEngine()
-    print("UQS Engine initialized.")
+    print("Emergent UQS Engine initialized.")

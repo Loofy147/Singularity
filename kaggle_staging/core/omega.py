@@ -1,7 +1,8 @@
 """
-OMEGA ORCHESTRATOR
-==================
+OMEGA ORCHESTRATOR (V3.1)
+=========================
 The master controller for the self-evolving realization system.
+Updated to support the 12-dimension emergent UQS framework.
 """
 
 import sys
@@ -39,30 +40,35 @@ class OMEGAOrchestrator:
         self.coordinator = MultiAgentCoordinator()
         self.improver = RecursiveSelfImprover()
 
-        logger.info("🌌 OMEGA ORCHESTRATOR INITIALIZED")
+        logger.info("🌌 OMEGA ORCHESTRATOR INITIALIZED (UQS V3.1)")
 
-    def run_cycle(self, prompts: List[str]):
+    def run_cycle(self, inputs: List[str], target_q: float = 0.90):
         logger.info("\n" + "="*50)
-        logger.info("🌌 OMEGA SINGULARITY CYCLE")
+        logger.info("🌌 OMEGA SINGULARITY CYCLE (EMERGENT UQS)")
         logger.info("="*50)
 
-        # 1. Optimize prompts using multi-agent system
+        # 1. Optimize knowledge states using 12-agent system
         results = []
-        for prompt in prompts:
-            optimized, meta = self.coordinator.optimize_prompt(prompt)
+        for text in inputs:
+            optimized, meta = self.coordinator.optimize_knowledge(text, target_q=target_q)
             results.append(meta['final_q'])
+            logger.info(f"Optimized input. Final Q: {meta['final_q']:.4f} (Layer {meta['final_layer']})")
 
         # 2. Evolve the framework based on performance
-        # (Using simulated realizations for now)
-        realizations = list(self.base_engine.index.values())
+        realizations = list(self.coordinator.engine.index.values())
         if realizations:
             self.singularity_engine.evolve(realizations, results)
 
         # 3. Meta-optimization
         self.improver.meta_optimize(results)
 
-        logger.info(f"Cycle complete. Avg Q: {np.mean(results):.4f}")
+        avg_q = np.mean(results) if results else 0
+        logger.info(f"Cycle complete. Avg Q: {avg_q:.4f}")
+        return results
 
 if __name__ == "__main__":
     omega = OMEGAOrchestrator()
-    omega.run_cycle(["Optimize knowledge crystallization.", "Explain بنات افكار."])
+    omega.run_cycle([
+        "Optimize knowledge crystallization emergents.",
+        "Explain daughters of ideas (بنات افكار) and their reproductive layers."
+    ])

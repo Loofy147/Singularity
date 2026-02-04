@@ -1,7 +1,7 @@
 """
-PES MULTI-AGENT SYSTEM
+UQS MULTI-AGENT SYSTEM
 ======================
-Managed multi-agent system for prompt optimization using the PES framework.
+Managed multi-agent system for knowledge optimization using the 12-dimension UQS framework.
 """
 
 import sys
@@ -19,69 +19,84 @@ from core.engine import RealizationEngine, QualityDimension, RealizationFeatures
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-class Dimension(str, Enum):
-    PERSONA = "P"
-    TONE = "T"
-    FORMAT = "F"
-    SPECIFICITY = "S"
-    CONSTRAINTS = "C"
-    CONTEXT = "R"
+class UQSDimension(str, Enum):
+    GROUNDING = "grounding"
+    CERTAINTY = "certainty"
+    STRUCTURE = "structure"
+    APPLICABILITY = "applicability"
+    COHERENCE = "coherence"
+    GENERATIVITY = "generativity"
+    PRESENTATION = "presentation"
+    TEMPORAL = "temporal"
+    DENSITY = "density"
+    SYNTHESIS = "synthesis"
+    RESILIENCE = "resilience"
+    TRANSFERABILITY = "transferability"
 
-PES_WEIGHTS = {
-    Dimension.PERSONA: 0.20,
-    Dimension.TONE: 0.18,
-    Dimension.FORMAT: 0.18,
-    Dimension.SPECIFICITY: 0.18,
-    Dimension.CONSTRAINTS: 0.13,
-    Dimension.CONTEXT: 0.13
+# Weights from core/engine.py
+UQS_WEIGHTS = {
+    UQSDimension.GROUNDING: 0.15,
+    UQSDimension.CERTAINTY: 0.18,
+    UQSDimension.STRUCTURE: 0.15,
+    UQSDimension.APPLICABILITY: 0.14,
+    UQSDimension.COHERENCE: 0.10,
+    UQSDimension.GENERATIVITY: 0.07,
+    UQSDimension.PRESENTATION: 0.04,
+    UQSDimension.TEMPORAL: 0.03,
+    UQSDimension.DENSITY: 0.05,
+    UQSDimension.SYNTHESIS: 0.04,
+    UQSDimension.RESILIENCE: 0.03,
+    UQSDimension.TRANSFERABILITY: 0.02
 }
 
 @dataclass
-class PromptState:
+class RealizationState:
     text: str
-    scores: Dict[Dimension, float]
+    scores: Dict[UQSDimension, float]
     iteration: int
 
 class BaseAgent:
-    def __init__(self, dimension: Dimension):
+    def __init__(self, dimension: UQSDimension):
         self.dimension = dimension
-        self.weight = PES_WEIGHTS[dimension]
+        self.weight = UQS_WEIGHTS[dimension]
 
-    def act(self, state: PromptState) -> Dict[str, Any]:
-        # Simple heuristic-based action for demonstration
-        # In a real RL system, this would use a policy network
+    def act(self, state: RealizationState) -> Dict[str, Any]:
+        # Heuristic-based action
         current_score = state.scores.get(self.dimension, 0.5)
-        improvement = (1.0 - current_score) * 0.1 * np.random.random()
+
+        # Emerging dimensions (D7-D10) are harder to optimize
+        is_emergent = self.dimension in [
+            UQSDimension.DENSITY, UQSDimension.SYNTHESIS,
+            UQSDimension.RESILIENCE, UQSDimension.TRANSFERABILITY
+        ]
+        difficulty = 0.5 if is_emergent else 1.0
+
+        improvement = (1.0 - current_score) * 0.1 * np.random.random() * difficulty
+
         return {
             "dimension": self.dimension,
             "improvement": improvement,
-            "description": f"Improving {self.dimension.name} by {improvement:.4f}"
+            "description": f"Optimizing {self.dimension.value} by {improvement:.4f}"
         }
 
 class MultiAgentCoordinator:
     def __init__(self):
-        self.agents = {d: BaseAgent(d) for d in Dimension}
+        self.agents = {d: BaseAgent(d) for d in UQSDimension}
+        self.engine = RealizationEngine()
 
-        # Initialize an engine specifically for prompts
-        prompt_dims = {
-            d.name.lower(): QualityDimension(d.name, f"PES {d.name} dimension", PES_WEIGHTS[d])
-            for d in Dimension
-        }
-        self.engine = RealizationEngine(dimensions=prompt_dims)
+        logger.info("Multi-Agent Coordinator initialized with 12 UQS dimensions")
 
-        logger.info("Multi-Agent Coordinator initialized with PES dimensions")
-
-    def optimize_prompt(self, initial_prompt: str, target_q: float = 0.85, max_iterations: int = 10) -> Tuple[str, Dict[str, Any]]:
-        current_text = initial_prompt
-        current_scores = {d: 0.5 for d in Dimension}
+    def optimize_knowledge(self, initial_text: str, target_q: float = 0.90, max_iterations: int = 15) -> Tuple[str, Dict[str, Any]]:
+        current_text = initial_text
+        current_scores = {d: 0.5 for d in UQSDimension}
 
         history = []
 
         for i in range(max_iterations):
-            state = PromptState(text=current_text, scores=current_scores, iteration=i)
+            state = RealizationState(text=current_text, scores=current_scores, iteration=i)
 
             # Agents act in order of weight (highest priority first)
-            sorted_dimensions = sorted(Dimension, key=lambda d: PES_WEIGHTS[d], reverse=True)
+            sorted_dimensions = sorted(UQSDimension, key=lambda d: UQS_WEIGHTS[d], reverse=True)
 
             iteration_actions = []
             for d in sorted_dimensions:
@@ -93,9 +108,9 @@ class MultiAgentCoordinator:
                 iteration_actions.append(action)
 
             # Calculate new Q-score using the engine
-            feat_dict = {d.name.lower(): current_scores[d] for d in Dimension}
+            feat_dict = {d.value: current_scores[d] for d in UQSDimension}
             features = RealizationFeatures(scores=feat_dict)
-            q_score, _ = self.engine.calculate_q_score(features)
+            q_score, breakdown = self.engine.calculate_q_score(features)
 
             history.append({
                 "iteration": i,
@@ -106,25 +121,28 @@ class MultiAgentCoordinator:
             logger.info(f"Iteration {i}: Q-score = {q_score:.4f}")
 
             if q_score >= target_q:
-                logger.info(f"Target Q-score reached at iteration {i}")
+                logger.info(f"Target Q-score {target_q} reached at iteration {i}")
                 break
 
-        # Final crystallization of the optimized prompt as a realization
-        self.engine.add_realization(
+        # Final crystallization
+        r = self.engine.add_realization(
             content=current_text,
-            features=RealizationFeatures(scores={d.name.lower(): current_scores[d] for d in Dimension}),
+            features=RealizationFeatures(scores={d.value: current_scores[d] for d in UQSDimension}),
             turn_number=max_iterations,
-            context="Multi-agent optimization"
+            context="UQS 12-agent optimization"
         )
 
         return current_text, {
+            "realization_id": r.id,
             "final_q": q_score,
             "iterations": i + 1,
-            "history": history
+            "history": history,
+            "final_layer": r.layer
         }
 
 if __name__ == "__main__":
     coordinator = MultiAgentCoordinator()
-    optimized, meta = coordinator.optimize_prompt("Write a poem about space.")
-    print(f"\nFinal Q-score: {meta['final_q']:.4f}")
+    optimized, meta = coordinator.optimize_knowledge("Knowledge about بنات افكار (daughters of ideas).")
+    print(f"\nFinal Q-score: {meta['final_q']:.4f} (Layer {meta['final_layer']})")
     print(f"Iterations: {meta['iterations']}")
+    print(f"Realization ID: {meta['realization_id']}")
