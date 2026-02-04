@@ -1,0 +1,34 @@
+[{"stream_name":"stdout","time":8.012949274,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":8.013004564,"data":"🌌 REALIZATION ENGINE: ADVANCED UQS V3.1 TRAINING SESSION\n"}
+,{"stream_name":"stdout","time":8.013010544,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":8.015264067,"data":"⚠️ optimized_realizations_v3.1.json not found, checking realizations.json\n"}
+,{"stream_name":"stdout","time":8.018774565,"data":"✅ Loaded 4 realizations from legacy store.\n"}
+,{"stream_name":"stdout","time":8.047724865,"data":"🚀 Training for 100 epochs (Batch Size: 5)...\n"}
+,{"stream_name":"stdout","time":8.170465196,"data":"Epoch 000: Imp = +0.023243 | MAE = 0.019481\n"}
+,{"stream_name":"stdout","time":8.183520421,"data":"Epoch 010: Imp = +0.033505 | MAE = 0.019481\n"}
+,{"stream_name":"stdout","time":8.196422907,"data":"Epoch 020: Imp = +0.042627 | MAE = 0.019481\n"}
+,{"stream_name":"stdout","time":8.2094819,"data":"Epoch 030: Imp = +0.051922 | MAE = 0.019481\n"}
+,{"stream_name":"stdout","time":8.222528016,"data":"Epoch 040: Imp = +0.061240 | MAE = 0.019481\n"}
+,{"stream_name":"stdout","time":8.236476213,"data":"Epoch 050: Imp = +0.070024 | MAE = 0.019481\n"}
+,{"stream_name":"stdout","time":8.250839066,"data":"Epoch 060: Imp = +0.077190 | MAE = 0.019481\n"}
+,{"stream_name":"stdout","time":8.264663915,"data":"Epoch 070: Imp = +0.082439 | MAE = 0.019481\n"}
+,{"stream_name":"stdout","time":8.278721249,"data":"Epoch 080: Imp = +0.086717 | MAE = 0.019481\n"}
+,{"stream_name":"stdout","time":8.292754376,"data":"Epoch 090: Imp = +0.090948 | MAE = 0.019481\n"}
+,{"stream_name":"stdout","time":8.305395834,"data":"\n"}
+,{"stream_name":"stdout","time":8.305425272,"data":"========================================\n"}
+,{"stream_name":"stdout","time":8.305429845,"data":"FINAL TRAINING METRICS\n"}
+,{"stream_name":"stdout","time":8.305433666,"data":"========================================\n"}
+,{"stream_name":"stdout","time":8.305437235,"data":"Mean Improvement: 0.065253\n"}
+,{"stream_name":"stdout","time":8.305440819,"data":"Model Calibration (MAE): 0.019481\n"}
+,{"stream_name":"stdout","time":8.305444895,"data":"Tier Usage: {'high': 1.0}\n"}
+,{"stream_name":"stdout","time":8.316567262,"data":"\n"}
+,{"stream_name":"stdout","time":8.316594878,"data":"✅ Advanced training complete. Artifacts saved.\n"}
+,{"stream_name":"stderr","time":12.447286595,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":12.447368354,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":12.84851516,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":12.848581428,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":13.705461230000001,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":13.705503808,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":13.75652086,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":15.450703282,"data":"[NbConvertApp] Writing 317992 bytes to __results__.html\n"}
+]
