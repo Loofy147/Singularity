@@ -10,7 +10,7 @@ Scenario: Physics + Biology + CS all discover the same pattern
 import sys
 sys.path.append('/home/claude')
 
-from realization_engine import RealizationEngine, RealizationFeatures
+from core.engine import RealizationEngine, RealizationFeatures
 import json
 
 

@@ -10,7 +10,7 @@ Scenario: Newtonian mechanics → Einsteinian relativity transition
 import sys
 sys.path.append('/home/claude')
 
-from realization_engine import RealizationEngine, RealizationFeatures
+from core.engine import RealizationEngine, RealizationFeatures
 import json
 
 
