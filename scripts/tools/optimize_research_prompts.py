@@ -69,7 +69,7 @@ Output in JSON format."""
     engine = omega.coordinator.engine
     realizations = [r.to_dict() for r in engine.index.values()]
 
-    output_path = "data/optimized_realizations_v3.1.json"
+    output_path = "data/realizations/optimized_realizations_v3.1.json"
     with open(output_path, "w") as f:
         json.dump(realizations, f, indent=2)
 

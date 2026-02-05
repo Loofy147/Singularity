@@ -6,7 +6,7 @@ from datetime import datetime
 def generate_hard_dataset():
     print("🚀 Generating Hard Case Study Dataset...")
 
-    input_file = "data/hard_test_scenarios.json"
+    input_file = "data/scenarios/hard_test_scenarios.json"
     if not os.path.exists(input_file):
         print(f"❌ Error: {input_file} not found!")
         return
@@ -119,7 +119,7 @@ def generate_hard_dataset():
             "context": f"Cross-Domain Convergence ({d_key})"
         })
 
-    output_path = "data/hard_case_study_dataset.json"
+    output_path = "data/realizations/hard_case_study_dataset.json"
     with open(output_path, "w") as f:
         json.dump(all_realizations, f, indent=2)
 

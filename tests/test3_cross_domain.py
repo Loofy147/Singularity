@@ -325,7 +325,7 @@ class CrossDomainSynthesisTest:
         }
     
     def export_results(self):
-        with open('/app/data/test3_cross_domain_results.json', 'w') as f:
+        with open('/app/data/results/test3_cross_domain_results.json', 'w') as f:
             json.dump(self.results, f, indent=2)
         print(f"\n✅ Results exported to test3_cross_domain_results.json")
 

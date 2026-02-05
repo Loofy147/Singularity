@@ -27,8 +27,8 @@ def verify():
     print(f"\nCalculated Q-Score: {q_score:.4f}")
 
     # 3. Test optimization results
-    if os.path.exists("data/optimized_realizations_v3.1.json"):
-        with open("data/optimized_realizations_v3.1.json", "r") as f:
+    if os.path.exists("data/realizations/optimized_realizations_v3.1.json"):
+        with open("data/realizations/optimized_realizations_v3.1.json", "r") as f:
             optimized = json.load(f)
         print(f"\nVerified local results: {len(optimized)} optimized realizations found.")
 

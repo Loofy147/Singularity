@@ -7,12 +7,12 @@ sys.path.append(os.getcwd())
 from core.engine import RealizationEngine
 
 def explore():
-    if not os.path.exists('data/realizations.json'):
-        print("Error: data/realizations.json not found. Run precompute_realizations.py first.")
+    if not os.path.exists('data/realizations/realizations.json'):
+        print("Error: data/realizations/realizations.json not found. Run precompute_realizations.py first.")
         return
 
     # In my version I didn't implement import_json yet, let's add it or just load manually
-    with open('data/realizations.json', 'r') as f:
+    with open('data/realizations/realizations.json', 'r') as f:
         data = json.load(f)
 
     print("\n" + "="*60)
