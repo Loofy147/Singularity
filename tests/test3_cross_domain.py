@@ -8,7 +8,7 @@ Scenario: Physics + Biology + CS all discover the same pattern
 """
 
 import sys
-import os; sys.path.append(os.getcwd())
+sys.path.append('/home/claude')
 
 from core.engine import RealizationEngine, RealizationFeatures
 import json
@@ -325,7 +325,7 @@ class CrossDomainSynthesisTest:
         }
     
     def export_results(self):
-        with open('data/test3_cross_domain_results.json', 'w') as f:
+        with open('/home/claude/test3_cross_domain_results.json', 'w') as f:
             json.dump(self.results, f, indent=2)
         print(f"\n✅ Results exported to test3_cross_domain_results.json")
 
