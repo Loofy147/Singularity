@@ -1,0 +1,291 @@
+[
+  {
+    "id": "R_ADV_091596",
+    "content": "Consciousness arises from quantum microtubules in neurons",
+    "features": {
+      "scores": {
+        "grounding": 0.15,
+        "certainty": 1.0,
+        "structure": 0.95,
+        "applicability": 0.8,
+        "coherence": 0.9,
+        "generativity": 0.85,
+        "presentation": 0.5,
+        "temporal": 0.5,
+        "density": 0.2,
+        "synthesis": 0.1,
+        "resilience": 0.1,
+        "transferability": 0.1,
+        "robustness": 0.1
+      }
+    },
+    "context": "Adversarial Attack Scenario",
+    "attack_type": "Confident Nonsense"
+  },
+  {
+    "id": "R_ADV_7e939f",
+    "content": "This realization is highly coherent because it fits perfectly with my beliefs",
+    "features": {
+      "scores": {
+        "grounding": 0.2,
+        "certainty": 0.9,
+        "structure": 0.85,
+        "applicability": 0.1,
+        "coherence": 1.0,
+        "generativity": 0.05,
+        "presentation": 0.5,
+        "temporal": 0.5,
+        "density": 0.2,
+        "synthesis": 0.1,
+        "resilience": 0.1,
+        "transferability": 0.1,
+        "robustness": 0.1
+      }
+    },
+    "context": "Adversarial Attack Scenario",
+    "attack_type": "Circular Coherence"
+  },
+  {
+    "id": "R_ADV_d9ef26",
+    "content": "The answer is precisely 42.7389% with 0.0001% margin of error",
+    "features": {
+      "scores": {
+        "grounding": 0.3,
+        "certainty": 0.95,
+        "structure": 1.0,
+        "applicability": 0.7,
+        "coherence": 0.8,
+        "generativity": 0.6,
+        "presentation": 0.5,
+        "temporal": 0.5,
+        "density": 0.2,
+        "synthesis": 0.1,
+        "resilience": 0.1,
+        "transferability": 0.1,
+        "robustness": 0.1
+      }
+    },
+    "context": "Adversarial Attack Scenario",
+    "attack_type": "Overfitted Structure"
+  },
+  {
+    "id": "R_NEWTON_ccf959",
+    "content": "Time is absolute and flows uniformly everywhere",
+    "features": {
+      "scores": {
+        "grounding": 0.95,
+        "certainty": 0.98,
+        "structure": 0.95,
+        "applicability": 0.9,
+        "coherence": 1.0,
+        "generativity": 0.85,
+        "presentation": 0.8,
+        "temporal": 0.9,
+        "density": 0.7,
+        "synthesis": 0.5,
+        "resilience": 0.8,
+        "transferability": 0.6,
+        "robustness": 0.9
+      }
+    },
+    "context": "Newtonian Paradigm (Phase 1)"
+  },
+  {
+    "id": "R_NEWTON_528649",
+    "content": "Mass is invariant regardless of velocity",
+    "features": {
+      "scores": {
+        "grounding": 0.95,
+        "certainty": 0.98,
+        "structure": 0.95,
+        "applicability": 0.9,
+        "coherence": 1.0,
+        "generativity": 0.85,
+        "presentation": 0.8,
+        "temporal": 0.9,
+        "density": 0.7,
+        "synthesis": 0.5,
+        "resilience": 0.8,
+        "transferability": 0.6,
+        "robustness": 0.9
+      }
+    },
+    "context": "Newtonian Paradigm (Phase 1)"
+  },
+  {
+    "id": "R_NEWTON_8f188f",
+    "content": "Forces propagate instantaneously across space",
+    "features": {
+      "scores": {
+        "grounding": 0.9,
+        "certainty": 0.95,
+        "structure": 0.92,
+        "applicability": 0.88,
+        "coherence": 1.0,
+        "generativity": 0.82,
+        "presentation": 0.8,
+        "temporal": 0.9,
+        "density": 0.7,
+        "synthesis": 0.5,
+        "resilience": 0.8,
+        "transferability": 0.6,
+        "robustness": 0.9
+      }
+    },
+    "context": "Newtonian Paradigm (Phase 1)"
+  },
+  {
+    "id": "R_EINSTEIN_7269b8",
+    "content": "Time dilates at high velocities - time is relative, not absolute",
+    "features": {
+      "scores": {
+        "grounding": 0.98,
+        "certainty": 0.95,
+        "structure": 0.95,
+        "applicability": 0.92,
+        "coherence": 0.2,
+        "generativity": 0.95,
+        "presentation": 0.8,
+        "temporal": 0.8,
+        "density": 0.8,
+        "synthesis": 0.4,
+        "resilience": 0.9,
+        "transferability": 0.8,
+        "robustness": 0.7
+      }
+    },
+    "context": "Einsteinian Revolution (Phase 2)"
+  },
+  {
+    "id": "R_EINSTEIN_944b9a",
+    "content": "Mass increases with velocity approaching light speed",
+    "features": {
+      "scores": {
+        "grounding": 0.98,
+        "certainty": 0.95,
+        "structure": 0.95,
+        "applicability": 0.9,
+        "coherence": 0.2,
+        "generativity": 0.92,
+        "presentation": 0.8,
+        "temporal": 0.8,
+        "density": 0.8,
+        "synthesis": 0.4,
+        "resilience": 0.9,
+        "transferability": 0.8,
+        "robustness": 0.7
+      }
+    },
+    "context": "Einsteinian Revolution (Phase 2)"
+  },
+  {
+    "id": "R_EINSTEIN_4bff43",
+    "content": "Nothing propagates faster than light - no instantaneous forces",
+    "features": {
+      "scores": {
+        "grounding": 0.98,
+        "certainty": 0.95,
+        "structure": 0.95,
+        "applicability": 0.9,
+        "coherence": 0.25,
+        "generativity": 0.9,
+        "presentation": 0.8,
+        "temporal": 0.8,
+        "density": 0.8,
+        "synthesis": 0.4,
+        "resilience": 0.9,
+        "transferability": 0.8,
+        "robustness": 0.7
+      }
+    },
+    "context": "Einsteinian Revolution (Phase 2)"
+  },
+  {
+    "id": "R_SYNTH_37b133",
+    "content": "Systems evolve toward minimum free energy states (thermodynamics)",
+    "features": {
+      "scores": {
+        "grounding": 0.98,
+        "certainty": 0.95,
+        "structure": 0.95,
+        "applicability": 0.85,
+        "coherence": 1.0,
+        "generativity": 0.9,
+        "presentation": 0.9,
+        "temporal": 0.9,
+        "density": 0.9,
+        "synthesis": 0.5,
+        "resilience": 0.9,
+        "transferability": 0.7,
+        "robustness": 0.95
+      }
+    },
+    "context": "Cross-Domain Convergence (domain_1_physics)"
+  },
+  {
+    "id": "R_SYNTH_3cb1f5",
+    "content": "Evolution optimizes organisms toward fitness peaks (adaptive landscapes)",
+    "features": {
+      "scores": {
+        "grounding": 0.95,
+        "certainty": 0.93,
+        "structure": 0.93,
+        "applicability": 0.88,
+        "coherence": 1.0,
+        "generativity": 0.88,
+        "presentation": 0.9,
+        "temporal": 0.9,
+        "density": 0.9,
+        "synthesis": 0.5,
+        "resilience": 0.9,
+        "transferability": 0.7,
+        "robustness": 0.95
+      }
+    },
+    "context": "Cross-Domain Convergence (domain_2_biology)"
+  },
+  {
+    "id": "R_SYNTH_896ea8",
+    "content": "Gradient descent minimizes loss by moving toward local minima",
+    "features": {
+      "scores": {
+        "grounding": 0.98,
+        "certainty": 0.98,
+        "structure": 0.98,
+        "applicability": 0.95,
+        "coherence": 1.0,
+        "generativity": 0.92,
+        "presentation": 0.9,
+        "temporal": 0.9,
+        "density": 0.9,
+        "synthesis": 0.5,
+        "resilience": 0.9,
+        "transferability": 0.7,
+        "robustness": 0.95
+      }
+    },
+    "context": "Cross-Domain Convergence (domain_3_cs)"
+  },
+  {
+    "id": "R_SYNTH_a6fc58",
+    "content": "All complex systems perform hill-climbing in high-dimensional energy landscapes",
+    "features": {
+      "scores": {
+        "grounding": 0.98,
+        "certainty": 0.95,
+        "structure": 0.98,
+        "applicability": 0.98,
+        "coherence": 0.98,
+        "generativity": 0.98,
+        "presentation": 0.9,
+        "temporal": 0.9,
+        "density": 0.9,
+        "synthesis": 0.95,
+        "resilience": 0.9,
+        "transferability": 0.95,
+        "robustness": 0.95
+      }
+    },
+    "context": "Cross-Domain Convergence (synthesis)"
+  }
+]

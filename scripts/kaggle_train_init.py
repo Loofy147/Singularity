@@ -1,38 +1,32 @@
 import os
 import json
 import subprocess
+import shutil
 
 def init_kaggle_dataset():
-    print("🚀 Initializing Kaggle Dataset for Realization Engine...")
+    print("🚀 Synchronizing Kaggle Dataset (V3.1) for Realization Engine...")
+    staging_dir = "kaggle_staging"
+    if os.path.exists(staging_dir): shutil.rmtree(staging_dir)
+    os.makedirs(staging_dir)
 
-    # Create metadata for the dataset
-    dataset_dir = "data"
-    metadata = {
-        "title": "Realization Engine Knowledge Base",
-        "id": "djangolimited/realization-engine-data",
-        "licenses": [{"name": "CC0-1.0"}]
-    }
+    # Copy all data files including the new ones
+    for f in os.listdir("data"):
+        src = os.path.join("data", f)
+        if os.path.isfile(src): shutil.copy(src, staging_dir)
 
-    with open(os.path.join(dataset_dir, "dataset-metadata.json"), "w") as f:
-        json.dump(metadata, f, indent=2)
+    # Copy core directory as is
+    shutil.copytree("core", os.path.join(staging_dir, "core"))
 
-    print("✅ Created dataset-metadata.json in data/")
+    # Dataset metadata
+    metadata = {"title": "Realization Engine Knowledge Base", "id": "djangolimited/realization-engine-data", "licenses": [{"name": "CC0-1.0"}]}
+    with open(os.path.join(staging_dir, "dataset-metadata.json"), "w") as f: json.dump(metadata, f, indent=2)
 
-    # Try to create the dataset on Kaggle
     try:
-        subprocess.run(["kaggle", "datasets", "create", "-p", dataset_dir], check=True)
-        print("🎉 Dataset created successfully on Kaggle!")
+        subprocess.run(["kaggle", "datasets", "version", "-p", staging_dir, "-m", "Evolved UQS V3.1 with emergents and new optimized prompts", "--dir-mode", "zip"], check=True)
+        print("🎉 Dataset synchronized successfully!")
     except subprocess.CalledProcessError:
-        print("⚠️  Dataset already exists or error occurred. Attempting to update...")
-        try:
-            subprocess.run(["kaggle", "datasets", "version", "-p", dataset_dir, "-m", "Updated realizations"], check=True)
-            print("✅ Dataset updated successfully on Kaggle!")
-        except subprocess.CalledProcessError as e:
-            print(f"❌ Failed to manage Kaggle dataset: {e}")
+        subprocess.run(["kaggle", "datasets", "create", "-p", staging_dir, "--dir-mode", "zip"], check=True)
+        print("🎉 Dataset created successfully!")
 
 if __name__ == "__main__":
-    # Check if kaggle is configured
-    if not os.path.exists(os.path.expanduser("~/.kaggle/kaggle.json")):
-        print("❌ Kaggle not configured. Please run setup first.")
-    else:
-        init_kaggle_dataset()
+    init_kaggle_dataset()
