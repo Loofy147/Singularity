@@ -1,0 +1,341 @@
+{
+  "stats": {
+    "total_realizations": 10,
+    "layer_distribution": {
+      "0": 2,
+      "1": 1,
+      "2": 7,
+      "3": 0,
+      "N": 0
+    },
+    "avg_q_score": 0.9047000000000001
+  },
+  "dimensions": {
+    "grounding": {
+      "name": "Grounding/Persona",
+      "description": "Rootedness in facts/rules",
+      "weight": 0.18,
+      "discovered_by": "human"
+    },
+    "certainty": {
+      "name": "Certainty",
+      "description": "Self-certifying precision",
+      "weight": 0.2,
+      "discovered_by": "human"
+    },
+    "structure": {
+      "name": "Structure/Specificity",
+      "description": "Crystallization clarity",
+      "weight": 0.18,
+      "discovered_by": "human"
+    },
+    "applicability": {
+      "name": "Applicability",
+      "description": "Actionability/usefulness",
+      "weight": 0.16,
+      "discovered_by": "human"
+    },
+    "coherence": {
+      "name": "Coherence/Context",
+      "description": "Consistency with prior knowledge",
+      "weight": 0.12,
+      "discovered_by": "human"
+    },
+    "generativity": {
+      "name": "Generativity",
+      "description": "Daughter idea potential",
+      "weight": 0.08,
+      "discovered_by": "human"
+    },
+    "presentation": {
+      "name": "Presentation",
+      "description": "Format and tone quality",
+      "weight": 0.05,
+      "discovered_by": "human"
+    },
+    "temporal": {
+      "name": "Temporal",
+      "description": "Resilience over time",
+      "weight": 0.03,
+      "discovered_by": "human"
+    }
+  },
+  "realizations": [
+    {
+      "id": "R_e9ee9848",
+      "content": "CRISPR-Cas9 acts as programmable molecular scissors, enabling precise double-strand breaks in DNA.",
+      "features": {
+        "scores": {
+          "grounding": 0.98,
+          "certainty": 0.99,
+          "structure": 0.95,
+          "applicability": 0.96,
+          "coherence": 0.98,
+          "generativity": 0.95,
+          "presentation": 0.92,
+          "temporal": 0.98
+        }
+      },
+      "q_score": 0.968,
+      "layer": 0,
+      "timestamp": "2026-02-04T21:14:12.682358",
+      "parents": [],
+      "children": [],
+      "turn_number": 1,
+      "context": "Pharmacology/Genetic Engineering",
+      "evidence": [],
+      "reasoning_chain": {
+        "steps": [
+          {
+            "step_number": 1,
+            "description": "Analyze bacterial adaptive immune systems.",
+            "evidence": [],
+            "confidence": 1.0
+          },
+          {
+            "step_number": 2,
+            "description": "Repurpose sgRNA and Cas9 for eukaryotic genome editing.",
+            "evidence": [],
+            "confidence": 1.0
+          }
+        ],
+        "total_confidence": 1.0
+      },
+      "topology_relations": []
+    },
+    {
+      "id": "R_ebcae8f0",
+      "content": "Long-term potentiation (LTP) is the persistent strengthening of synapses based on recent patterns of activity.",
+      "features": {
+        "scores": {
+          "grounding": 0.95,
+          "certainty": 0.96,
+          "structure": 0.94,
+          "applicability": 0.92,
+          "coherence": 0.97,
+          "generativity": 0.9,
+          "presentation": 0.88,
+          "temporal": 0.95
+        }
+      },
+      "q_score": 0.9403,
+      "layer": 1,
+      "timestamp": "2026-02-04T21:14:12.682427",
+      "parents": [],
+      "children": [],
+      "turn_number": 2,
+      "context": "Neuroscience",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_8ed52ba7",
+      "content": "mRNA vaccines utilize lipid nanoparticles to deliver genetic instructions for spike protein synthesis to host cells.",
+      "features": {
+        "scores": {
+          "grounding": 0.97,
+          "certainty": 0.98,
+          "structure": 0.96,
+          "applicability": 0.99,
+          "coherence": 0.98,
+          "generativity": 0.92,
+          "presentation": 0.95,
+          "temporal": 0.97
+        }
+      },
+      "q_score": 0.9696,
+      "layer": 0,
+      "timestamp": "2026-02-04T21:14:12.682461",
+      "parents": [],
+      "children": [],
+      "turn_number": 3,
+      "context": "Immunology",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_8a7bbb74",
+      "content": "Medical Realization 4 with high grounding and clinical utility.",
+      "features": {
+        "scores": {
+          "grounding": 0.88,
+          "certainty": 0.9,
+          "structure": 0.86,
+          "applicability": 0.92,
+          "coherence": 0.9,
+          "generativity": 0.8,
+          "presentation": 0.85,
+          "temporal": 0.88
+        }
+      },
+      "q_score": 0.8813,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.682494",
+      "parents": [],
+      "children": [],
+      "turn_number": 4,
+      "context": "",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_88c5b6be",
+      "content": "Medical Realization 5 with high grounding and clinical utility.",
+      "features": {
+        "scores": {
+          "grounding": 0.88,
+          "certainty": 0.9,
+          "structure": 0.86,
+          "applicability": 0.92,
+          "coherence": 0.9,
+          "generativity": 0.8,
+          "presentation": 0.85,
+          "temporal": 0.88
+        }
+      },
+      "q_score": 0.8813,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.682523",
+      "parents": [],
+      "children": [],
+      "turn_number": 5,
+      "context": "",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_c9b98406",
+      "content": "Medical Realization 6 with high grounding and clinical utility.",
+      "features": {
+        "scores": {
+          "grounding": 0.88,
+          "certainty": 0.9,
+          "structure": 0.86,
+          "applicability": 0.92,
+          "coherence": 0.9,
+          "generativity": 0.8,
+          "presentation": 0.85,
+          "temporal": 0.88
+        }
+      },
+      "q_score": 0.8813,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.682549",
+      "parents": [],
+      "children": [],
+      "turn_number": 6,
+      "context": "",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_eb086e85",
+      "content": "Medical Realization 7 with high grounding and clinical utility.",
+      "features": {
+        "scores": {
+          "grounding": 0.88,
+          "certainty": 0.9,
+          "structure": 0.86,
+          "applicability": 0.92,
+          "coherence": 0.9,
+          "generativity": 0.8,
+          "presentation": 0.85,
+          "temporal": 0.88
+        }
+      },
+      "q_score": 0.8813,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.682575",
+      "parents": [],
+      "children": [],
+      "turn_number": 7,
+      "context": "",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_4afaa806",
+      "content": "Medical Realization 8 with high grounding and clinical utility.",
+      "features": {
+        "scores": {
+          "grounding": 0.88,
+          "certainty": 0.9,
+          "structure": 0.86,
+          "applicability": 0.92,
+          "coherence": 0.9,
+          "generativity": 0.8,
+          "presentation": 0.85,
+          "temporal": 0.88
+        }
+      },
+      "q_score": 0.8813,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.682618",
+      "parents": [],
+      "children": [],
+      "turn_number": 8,
+      "context": "",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_5002ed8a",
+      "content": "Medical Realization 9 with high grounding and clinical utility.",
+      "features": {
+        "scores": {
+          "grounding": 0.88,
+          "certainty": 0.9,
+          "structure": 0.86,
+          "applicability": 0.92,
+          "coherence": 0.9,
+          "generativity": 0.8,
+          "presentation": 0.85,
+          "temporal": 0.88
+        }
+      },
+      "q_score": 0.8813,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.682643",
+      "parents": [],
+      "children": [],
+      "turn_number": 9,
+      "context": "",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_0774b0b4",
+      "content": "Medical Realization 10 with high grounding and clinical utility.",
+      "features": {
+        "scores": {
+          "grounding": 0.88,
+          "certainty": 0.9,
+          "structure": 0.86,
+          "applicability": 0.92,
+          "coherence": 0.9,
+          "generativity": 0.8,
+          "presentation": 0.85,
+          "temporal": 0.88
+        }
+      },
+      "q_score": 0.8813,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.682668",
+      "parents": [],
+      "children": [],
+      "turn_number": 10,
+      "context": "",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+### PROMPT 1: COMPREHENSIVE MULTI-DOMAIN DATASET
 Generate a comprehensive dataset of knowledge realizations for a 'Realization Crystallization Engine'. The dataset should include 20 realizations across at least 4 domains (e.g., Physics, AI Safety, Philosophy, Law). Each realization must include:
 1. Content: A clear statement of the insight.
 2. Feature Scores (0-1): grounding, certainty, structure, applicability, coherence, generativity, presentation, temporal.
@@ -5,3 +6,38 @@ Generate a comprehensive dataset of knowledge realizations for a 'Realization Cr
 4. Topology: Parent-child relationships and typed relations (derivation, synthesis, contradiction, refinement).
 5. Reasoning: A step-by-step chain of thought explaining the realization.
 Output the result in a valid JSON format compatible with the RealizationEngine schema.
+Requirement: All realizations should aim for Q > 0.85.
+
+### PROMPT 2: SPECIALIZED MEDICAL REALIZATIONS
+Generate a high-quality dataset of 15 medical knowledge realizations focusing on Pharmacology, Immunology, and Neuroscience.
+Each realization must reach Q > 0.85 and include:
+- Evidence-based grounding.
+- Clear structural hierarchy.
+- Direct clinical applicability.
+- Reasoning chain linking physiological mechanisms to outcomes.
+Output in JSON format for the RealizationEngine.
+
+### PROMPT 3: SPECIALIZED LEGAL & ETHICAL REALIZATIONS
+Generate a dataset of 15 realizations covering Jurisprudence, AI Ethics, and International Law.
+Focus on:
+- Precedent-based grounding.
+- Complex topology (contradictions and refinements).
+- Layer 0 and Layer 1 status for core legal principles.
+- Q-score > 0.88 across all entries.
+Output in JSON format.
+
+### PROMPT 4: ECONOMIC & SYSTEMIC REALIZATIONS
+Generate a dataset of 15 realizations about Macroeconomics, Game Theory, and Complex Adaptive Systems.
+Each entry must include:
+- Mathematical foundation in grounding.
+- Generativity (بنات افكار) tracking (how these ideas spawn market trends).
+- Q > 0.85 with emphasis on temporal resilience.
+Output in JSON format.
+
+### PROMPT 5: META-OPTIMIZATION REALIZATIONS
+Generate a dataset of 10 realizations about the Prompt Engineering Score (PES) itself and the optimization of multi-agent systems.
+Focus on:
+- Self-referential coherence.
+- Theoretical convergence of quality frameworks.
+- Q > 0.90 for all entries.
+Output in JSON format.

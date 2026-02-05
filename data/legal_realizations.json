@@ -1,0 +1,325 @@
+{
+  "stats": {
+    "total_realizations": 10,
+    "layer_distribution": {
+      "0": 1,
+      "1": 1,
+      "2": 8,
+      "3": 0,
+      "N": 0
+    },
+    "avg_q_score": 0.9035399999999999
+  },
+  "dimensions": {
+    "grounding": {
+      "name": "Grounding/Persona",
+      "description": "Rootedness in facts/rules",
+      "weight": 0.18,
+      "discovered_by": "human"
+    },
+    "certainty": {
+      "name": "Certainty",
+      "description": "Self-certifying precision",
+      "weight": 0.2,
+      "discovered_by": "human"
+    },
+    "structure": {
+      "name": "Structure/Specificity",
+      "description": "Crystallization clarity",
+      "weight": 0.18,
+      "discovered_by": "human"
+    },
+    "applicability": {
+      "name": "Applicability",
+      "description": "Actionability/usefulness",
+      "weight": 0.16,
+      "discovered_by": "human"
+    },
+    "coherence": {
+      "name": "Coherence/Context",
+      "description": "Consistency with prior knowledge",
+      "weight": 0.12,
+      "discovered_by": "human"
+    },
+    "generativity": {
+      "name": "Generativity",
+      "description": "Daughter idea potential",
+      "weight": 0.08,
+      "discovered_by": "human"
+    },
+    "presentation": {
+      "name": "Presentation",
+      "description": "Format and tone quality",
+      "weight": 0.05,
+      "discovered_by": "human"
+    },
+    "temporal": {
+      "name": "Temporal",
+      "description": "Resilience over time",
+      "weight": 0.03,
+      "discovered_by": "human"
+    }
+  },
+  "realizations": [
+    {
+      "id": "R_de8b4fff",
+      "content": "Sovereignty is the supreme authority of a state over its territory, limited by jus cogens norms.",
+      "features": {
+        "scores": {
+          "grounding": 0.96,
+          "certainty": 0.95,
+          "structure": 0.94,
+          "applicability": 0.88,
+          "coherence": 0.98,
+          "generativity": 0.85,
+          "presentation": 0.9,
+          "temporal": 0.98
+        }
+      },
+      "q_score": 0.9328,
+      "layer": 1,
+      "timestamp": "2026-02-04T21:14:12.688128",
+      "parents": [],
+      "children": [],
+      "turn_number": 1,
+      "context": "International Law",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_30afcc40",
+      "content": "Legal liability for AI systems should follow a tiered approach: Strict liability for high-risk, fault-based for low-risk.",
+      "features": {
+        "scores": {
+          "grounding": 0.88,
+          "certainty": 0.86,
+          "structure": 0.92,
+          "applicability": 0.95,
+          "coherence": 0.92,
+          "generativity": 0.95,
+          "presentation": 0.88,
+          "temporal": 0.9
+        }
+      },
+      "q_score": 0.9054,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.688209",
+      "parents": [],
+      "children": [],
+      "turn_number": 2,
+      "context": "AI Ethics/Law",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_aa04f74f",
+      "content": "The writ of habeas corpus is a fundamental procedural guarantee protecting individual liberty against arbitrary state detention.",
+      "features": {
+        "scores": {
+          "grounding": 0.99,
+          "certainty": 1.0,
+          "structure": 0.98,
+          "applicability": 0.9,
+          "coherence": 1.0,
+          "generativity": 0.95,
+          "presentation": 0.95,
+          "temporal": 1.0
+        }
+      },
+      "q_score": 0.9721,
+      "layer": 0,
+      "timestamp": "2026-02-04T21:14:12.688247",
+      "parents": [],
+      "children": [],
+      "turn_number": 3,
+      "context": "Jurisprudence",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_c56dcaf4",
+      "content": "Legal Realization 4 based on precedent and ethical frameworks.",
+      "features": {
+        "scores": {
+          "grounding": 0.9,
+          "certainty": 0.88,
+          "structure": 0.92,
+          "applicability": 0.85,
+          "coherence": 0.95,
+          "generativity": 0.82,
+          "presentation": 0.85,
+          "temporal": 0.92
+        }
+      },
+      "q_score": 0.8893,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.688280",
+      "parents": [],
+      "children": [],
+      "turn_number": 4,
+      "context": "",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_fbf67921",
+      "content": "Legal Realization 5 based on precedent and ethical frameworks.",
+      "features": {
+        "scores": {
+          "grounding": 0.9,
+          "certainty": 0.88,
+          "structure": 0.92,
+          "applicability": 0.85,
+          "coherence": 0.95,
+          "generativity": 0.82,
+          "presentation": 0.85,
+          "temporal": 0.92
+        }
+      },
+      "q_score": 0.8893,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.688309",
+      "parents": [],
+      "children": [],
+      "turn_number": 5,
+      "context": "",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_a0331542",
+      "content": "Legal Realization 6 based on precedent and ethical frameworks.",
+      "features": {
+        "scores": {
+          "grounding": 0.9,
+          "certainty": 0.88,
+          "structure": 0.92,
+          "applicability": 0.85,
+          "coherence": 0.95,
+          "generativity": 0.82,
+          "presentation": 0.85,
+          "temporal": 0.92
+        }
+      },
+      "q_score": 0.8893,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.688336",
+      "parents": [],
+      "children": [],
+      "turn_number": 6,
+      "context": "",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_af23cb57",
+      "content": "Legal Realization 7 based on precedent and ethical frameworks.",
+      "features": {
+        "scores": {
+          "grounding": 0.9,
+          "certainty": 0.88,
+          "structure": 0.92,
+          "applicability": 0.85,
+          "coherence": 0.95,
+          "generativity": 0.82,
+          "presentation": 0.85,
+          "temporal": 0.92
+        }
+      },
+      "q_score": 0.8893,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.688362",
+      "parents": [],
+      "children": [],
+      "turn_number": 7,
+      "context": "",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_dece3731",
+      "content": "Legal Realization 8 based on precedent and ethical frameworks.",
+      "features": {
+        "scores": {
+          "grounding": 0.9,
+          "certainty": 0.88,
+          "structure": 0.92,
+          "applicability": 0.85,
+          "coherence": 0.95,
+          "generativity": 0.82,
+          "presentation": 0.85,
+          "temporal": 0.92
+        }
+      },
+      "q_score": 0.8893,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.688387",
+      "parents": [],
+      "children": [],
+      "turn_number": 8,
+      "context": "",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_959c40a4",
+      "content": "Legal Realization 9 based on precedent and ethical frameworks.",
+      "features": {
+        "scores": {
+          "grounding": 0.9,
+          "certainty": 0.88,
+          "structure": 0.92,
+          "applicability": 0.85,
+          "coherence": 0.95,
+          "generativity": 0.82,
+          "presentation": 0.85,
+          "temporal": 0.92
+        }
+      },
+      "q_score": 0.8893,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.688413",
+      "parents": [],
+      "children": [],
+      "turn_number": 9,
+      "context": "",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_d3086e2c",
+      "content": "Legal Realization 10 based on precedent and ethical frameworks.",
+      "features": {
+        "scores": {
+          "grounding": 0.9,
+          "certainty": 0.88,
+          "structure": 0.92,
+          "applicability": 0.85,
+          "coherence": 0.95,
+          "generativity": 0.82,
+          "presentation": 0.85,
+          "temporal": 0.92
+        }
+      },
+      "q_score": 0.8893,
+      "layer": 2,
+      "timestamp": "2026-02-04T21:14:12.688437",
+      "parents": [],
+      "children": [],
+      "turn_number": 10,
+      "context": "",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    }
+  ]
+}
