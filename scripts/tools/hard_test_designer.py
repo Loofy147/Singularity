@@ -500,7 +500,7 @@ def export_test_scenarios(test_cases: List[HardTestCase], top_n: int = 3):
             'expected_challenges': test.expected_challenges
         })
     
-    with open('/app/data/hard_test_scenarios.json', 'w') as f:
+    with open('/app/data/scenarios/hard_test_scenarios.json', 'w') as f:
         json.dump(output, f, indent=2)
     
     print(f"\n✅ Top {top_n} test scenarios exported")

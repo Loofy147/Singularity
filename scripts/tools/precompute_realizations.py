@@ -38,10 +38,10 @@ def precompute():
         f4, turn_number=15, parents=[r3.id]
     )
 
-    # Save to data/realizations.json
+    # Save to data/realizations/realizations.json
     os.makedirs('data', exist_ok=True)
-    engine.export_json('data/realizations.json')
-    print("✅ Crystallized knowledge saved to data/realizations.json")
+    engine.export_json('data/realizations/realizations.json')
+    print("✅ Crystallized knowledge saved to data/realizations/realizations.json")
     return engine
 
 if __name__ == "__main__":

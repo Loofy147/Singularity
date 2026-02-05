@@ -376,7 +376,7 @@ class ParadigmShiftTest:
         }
     
     def export_results(self):
-        with open('/app/data/test2_paradigm_shift_results.json', 'w') as f:
+        with open('/app/data/results/test2_paradigm_shift_results.json', 'w') as f:
             json.dump(self.results, f, indent=2)
         print(f"\n✅ Results exported to test2_paradigm_shift_results.json")
 
