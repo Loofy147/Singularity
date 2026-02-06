@@ -1,8 +1,8 @@
 """
-OMEGA ORCHESTRATOR (V3.1)
+OMEGA ORCHESTRATOR (V3.2)
 =========================
 The master controller for the self-evolving realization system.
-Updated to support the 12-dimension emergent UQS framework.
+Updated to support the 13-dimension emergent UQS framework.
 """
 
 import sys
@@ -40,14 +40,14 @@ class OMEGAOrchestrator:
         self.coordinator = MultiAgentCoordinator()
         self.improver = RecursiveSelfImprover()
 
-        logger.info("🌌 OMEGA ORCHESTRATOR INITIALIZED (UQS V3.1)")
+        logger.info("🌌 OMEGA ORCHESTRATOR INITIALIZED (UQS V3.2)")
 
     def run_cycle(self, inputs: List[str], target_q: float = 0.90):
         logger.info("\n" + "="*50)
-        logger.info("🌌 OMEGA SINGULARITY CYCLE (EMERGENT UQS)")
+        logger.info("🌌 OMEGA SINGULARITY CYCLE (ROBUST UQS V3.2)")
         logger.info("="*50)
 
-        # 1. Optimize knowledge states using 12-agent system
+        # 1. Optimize knowledge states using 13-agent system
         results = []
         for text in inputs:
             optimized, meta = self.coordinator.optimize_knowledge(text, target_q=target_q)

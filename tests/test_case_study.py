@@ -40,7 +40,7 @@ class Domain(str, Enum):
 
 
 @dataclass
-class TestPrompt:
+class PromptData:
     """Test prompt with ground truth"""
     id: int
     domain: Domain
@@ -56,7 +56,7 @@ class TestPrompt:
 
 # Simulated test prompts (in production, load from database)
 TEST_PROMPTS = [
-    TestPrompt(
+    PromptData(
         id=1,
         domain=Domain.CODE_GENERATION,
         text="Write a function to sort a list.",
@@ -64,7 +64,7 @@ TEST_PROMPTS = [
         target_q=0.85,
         ground_truth_optimal="You are a Senior Software Engineer with 10+ years in algorithm optimization. Write a production-grade Python function to sort a list using merge sort algorithm with O(n log n) time complexity. Include: type hints, docstring with complexity analysis, unit tests, and error handling for edge cases (empty list, single element, duplicates). Output as properly formatted Python code with inline comments explaining key steps."
     ),
-    TestPrompt(
+    PromptData(
         id=2,
         domain=Domain.CREATIVE_WRITING,
         text="Write a story about a robot.",
@@ -72,7 +72,7 @@ TEST_PROMPTS = [
         target_q=0.80,
         ground_truth_optimal="You are an award-winning science fiction author with 15+ years writing for The New Yorker and Asimov's Science Fiction magazine. Write a 500-word short story about a robot discovering emotions for the first time. Tone: Literary fiction with philosophical undertones. Structure: Three-act narrative (Setup, Confrontation, Resolution) with vivid sensory details. Theme: Explore the nature of consciousness and what it means to be human. Target audience: Adult readers interested in thought-provoking speculative fiction."
     ),
-    TestPrompt(
+    PromptData(
         id=3,
         domain=Domain.DATA_ANALYSIS,
         text="Analyze sales data.",
@@ -80,7 +80,7 @@ TEST_PROMPTS = [
         target_q=0.85,
         ground_truth_optimal="You are a Principal Data Scientist with 12+ years at Fortune 500 companies specializing in revenue analytics and business intelligence. Analyze the provided quarterly sales data (CSV format with columns: date, product_id, region, revenue, units_sold) and produce: (1) Executive summary (3 bullet points highlighting key insights), (2) Trend analysis with statistical significance tests (p<0.05), (3) Regional performance comparison table sorted by revenue, (4) Actionable recommendations with projected ROI, (5) Data visualizations (matplotlib) showing: revenue over time, top 10 products, regional heatmap. Output as Jupyter notebook with markdown explanations and inline code. Constraints: Analysis must complete in <5 minutes on standard laptop, visualizations must be publication-ready (DPI=300)."
     ),
-    TestPrompt(
+    PromptData(
         id=4,
         domain=Domain.TECHNICAL_SPEC,
         text="Design a REST API.",
@@ -88,7 +88,7 @@ TEST_PROMPTS = [
         target_q=0.88,
         ground_truth_optimal="You are a Distinguished Principal Software Architect with 20+ years designing scalable distributed systems at Google, Amazon, and Microsoft. Design a production-grade REST API for user authentication and authorization supporting 10M+ requests/day. Deliverables: (1) OpenAPI 3.0 specification with all endpoints, request/response schemas, error codes (2) Authentication flow diagram (JWT-based) (3) Rate limiting strategy (1000 req/hour per user) (4) Database schema (PostgreSQL) with indexes (5) Deployment architecture (Kubernetes) with auto-scaling (6) Monitoring & alerting setup (Prometheus/Grafana) (7) Security hardening checklist (OWASP Top 10) (8) Performance benchmarks (p99 latency <100ms) (9) Cost estimation (AWS/GCP). Output as Markdown technical design document with mermaid diagrams. Constraints: Must support OAuth 2.0, GDPR compliant, zero-downtime deployments."
     ),
-    TestPrompt(
+    PromptData(
         id=5,
         domain=Domain.CONVERSATIONAL,
         text="Help me learn Python.",

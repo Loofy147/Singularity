@@ -384,3 +384,7 @@ class ParadigmShiftTest:
 if __name__ == "__main__":
     test = ParadigmShiftTest()
     test.run_test()
+
+def test_paradigm_shift():
+    test = ParadigmShiftTest()
+    test.run_test()

@@ -1,3 +1,3 @@
 - Bundled zero-dependency training scripts are essential for remote kernel execution on Kaggle.
-- 12-dimension UQS states trigger deeper 'High-Tier' reasoning compared to legacy 8-dimension states.
+- 13-dimension UQS states trigger deeper 'High-Tier' reasoning compared to legacy 8-dimension states.
 - Synthetic data generation based on content hashes provides a stable seed for mock training simulations.
