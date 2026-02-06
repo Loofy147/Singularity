@@ -69,26 +69,31 @@ From our conversation, we extracted **13 realizations**:
 
 ---
 
-## The Q-Score Formula
+## The Q-Score Formula (V3.2 Update)
 
-```
-Q = 0.18×Grounding + 0.22×Certainty + 0.20×Structure + 0.18×Applicability + 0.12×Coherence + 0.10×Generativity
-```
+The system has evolved to **V3.2**, utilizing a **13-dimension Robust Universal Quality Score (UQS)** including dimensions discovered by the Singularity engine such as Robustness, Resilience, and Transferability.
 
-**Where:**
-- **Grounding** (0-1): How rooted in facts/rules
-- **Certainty** (0-1): "Precision auto" quality - self-certifying knowledge
-- **Structure** (0-1): Crystallization clarity (procedure → fact)
-- **Applicability** (0-1): Actionability, usefulness
-- **Coherence** (0-1): Consistency with prior layers
-- **Generativity** (0-1): بنات افكار potential (how many daughters can spawn)
+### The Robust UQS Formula (V3.2)
 
-**Why these weights?**
-- Certainty gets highest weight (0.22) because it IS the realization signal
-- Structure and Grounding are critical for crystallization
-- Applicability determines if it's actually useful
-- Coherence prevents contradictions
-- Generativity captures long-term value
+The system now uses a weighted sum of 13 quality dimensions:
+
+| Dimension | weight | Description | Discovered By |
+|-----------|--------|-------------|---------------|
+| Grounding | 0.14 | Rootedness in facts/rules | Human |
+| Certainty | 0.16 | Self-certifying precision | Human |
+| Structure | 0.14 | Crystallization clarity | Human |
+| Applicability | 0.12 | Actionability/usefulness | Human |
+| Coherence | 0.10 | Consistency with prior knowledge | Human |
+| Generativity | 0.07 | Daughter idea potential | Human |
+| Presentation | 0.04 | Format and tone quality | Human |
+| Temporal | 0.03 | Resilience over time | Human |
+| Density | 0.05 | بنات افكار spawning rate | Singularity |
+| Synthesis | 0.04 | Convergence quality | Singularity |
+| Resilience | 0.03 | Stability across paradigm shifts | Singularity |
+| Transferability | 0.02 | Cross-domain applicability | Singularity |
+| Robustness | 0.06 | Adversarial resistance | Singularity |
+
+**Note**: Weights are automatically normalized to 1.0 by the engine.
 
 ---
 

@@ -7,7 +7,7 @@ sys.path.append(os.getcwd())
 from core.engine import RealizationEngine, RealizationFeatures
 
 def verify():
-    print("🚀 Verifying Realization Engine (V3.1) with Emergent Dimensions")
+    print("🚀 Verifying Realization Engine (V3.2) with Emergent Dimensions")
     engine = RealizationEngine()
 
     # 1. Check Dimensions
@@ -20,19 +20,19 @@ def verify():
         grounding=0.95, certainty=0.98, structure=0.92,
         applicability=0.90, coherence=0.95, generativity=0.85,
         presentation=0.80, temporal=0.90,
-        density=0.95, synthesis=0.90, resilience=0.92, transferability=0.88
+        density=0.95, synthesis=0.90, resilience=0.92, transferability=0.88, robustness=0.90
     )
 
     q_score, breakdown = engine.calculate_q_score(features)
     print(f"\nCalculated Q-Score: {q_score:.4f}")
 
     # 3. Test optimization results
-    if os.path.exists("data/realizations/optimized_realizations_v3.1.json"):
-        with open("data/realizations/optimized_realizations_v3.1.json", "r") as f:
+    if os.path.exists("data/realizations/optimized_realizations_v3.2.json"):
+        with open("data/realizations/optimized_realizations_v3.2.json", "r") as f:
             optimized = json.load(f)
         print(f"\nVerified local results: {len(optimized)} optimized realizations found.")
 
-    print("\n✅ V3.1 Engine Local Verification PASSED")
+    print("\n✅ V3.2 Engine Local Verification PASSED")
 
 if __name__ == "__main__":
     verify()

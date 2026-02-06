@@ -333,3 +333,7 @@ class CrossDomainSynthesisTest:
 if __name__ == "__main__":
     test = CrossDomainSynthesisTest()
     test.run_test()
+
+def test_cross_domain():
+    test = CrossDomainSynthesisTest()
+    test.run_test()
