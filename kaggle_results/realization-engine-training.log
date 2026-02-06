@@ -1,0 +1,33 @@
+[{"stream_name":"stdout","time":8.180528761,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":8.18064718,"data":"🌌 REALIZATION ENGINE: HARD CASE STUDY TRAINING SESSION (V3.2)\n"}
+,{"stream_name":"stdout","time":8.180660919,"data":"================================================================================\n"}
+,{"stream_name":"stdout","time":8.190638972,"data":"✅ Loaded 13 hard case realizations.\n"}
+,{"stream_name":"stdout","time":8.218720367,"data":"🚀 Training for 150 epochs on HARD cases...\n"}
+,{"stream_name":"stdout","time":8.349537076,"data":"Epoch 000: Imp = +0.054318 | MAE = 0.074391\n"}
+,{"stream_name":"stdout","time":8.444796117,"data":"Epoch 015: Imp = +0.049879 | MAE = 0.077782\n"}
+,{"stream_name":"stdout","time":8.542806458,"data":"Epoch 030: Imp = +0.048295 | MAE = 0.077839\n"}
+,{"stream_name":"stdout","time":8.639798218,"data":"Epoch 045: Imp = +0.055191 | MAE = 0.078082\n"}
+,{"stream_name":"stdout","time":8.737565891,"data":"Epoch 060: Imp = +0.049877 | MAE = 0.078044\n"}
+,{"stream_name":"stdout","time":8.836013682,"data":"Epoch 075: Imp = +0.051382 | MAE = 0.077978\n"}
+,{"stream_name":"stdout","time":8.936389248,"data":"Epoch 090: Imp = +0.061406 | MAE = 0.078039\n"}
+,{"stream_name":"stdout","time":9.037575139,"data":"Epoch 105: Imp = +0.047646 | MAE = 0.077965\n"}
+,{"stream_name":"stdout","time":9.142746209,"data":"Epoch 120: Imp = +0.067399 | MAE = 0.078014\n"}
+,{"stream_name":"stdout","time":9.24559362,"data":"Epoch 135: Imp = +0.073763 | MAE = 0.078067\n"}
+,{"stream_name":"stdout","time":9.343221729,"data":"\n"}
+,{"stream_name":"stdout","time":9.343251946,"data":"========================================\n"}
+,{"stream_name":"stdout","time":9.343257231,"data":"FINAL HARD CASE TRAINING METRICS\n"}
+,{"stream_name":"stdout","time":9.343261282,"data":"========================================\n"}
+,{"stream_name":"stdout","time":9.343265766,"data":"Mean Improvement: 0.056323\n"}
+,{"stream_name":"stdout","time":9.343269613,"data":"Robustness Score (Inferred): 0.922038\n"}
+,{"stream_name":"stdout","time":9.343273833,"data":"Tier Usage: {'high': 1.0}\n"}
+,{"stream_name":"stdout","time":9.355891882,"data":"\n"}
+,{"stream_name":"stdout","time":9.355917088,"data":"✅ Hard case study training complete. Artifacts saved.\n"}
+,{"stream_name":"stderr","time":13.464701887,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":13.464772448,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":13.84446154,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":13.844497858,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":14.692106730999999,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":14.692154973,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":14.739406779,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":16.402144179,"data":"[NbConvertApp] Writing 320262 bytes to __results__.html\n"}
+]

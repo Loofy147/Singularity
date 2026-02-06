@@ -1,0 +1,47 @@
+{
+  "selection_criteria": "Top 3 by PES score",
+  "selected_prompts": [
+    {
+      "rank": 1,
+      "title": "Pre-Computation Equals Crystallization: Bridging Distributed Systems and Cognition",
+      "pes_score": 0.946,
+      "features": {
+        "foundation": 0.98,
+        "clarity": 0.95,
+        "structure": 0.92,
+        "impact": 0.95,
+        "harmony": 0.98,
+        "generativity": 0.88
+      },
+      "prompt": "\nWrite a comprehensive academic research paper on \"Pre-Computation Equals Crystallization: A Unified Theory of Knowledge Caching Across Systems and Minds\"\n\nCORE THESIS:\nPre-computation in distributed systems and realization crystallization in cognition are mathematically identical processes:\n- Both use weighted scoring (efficiency metrics vs Q-scores)\n- Both organize into layers (compile/build/deploy/runtime vs 0/1/2/3/N)\n- Both have invalidation strategies (TTL/event-based vs coherence decay)\n- Both optimize for reuse (cache hit rate vs retrieval frequency)\n\nREQUIRED SECTIONS:\n1. Abstract\n2. Introduction: Two Worlds, One Pattern\n3. Distributed Systems Pre-Computation\n   - CDN edge caching\n   - Build artifacts (compile, link, package, deploy)\n   - Database query results\n   - Static site generation\n4. Cognitive Crystallization\n   - Procedural \u2192 declarative knowledge\n   - Working memory \u2192 long-term memory\n   - Insight moments (Aha! experiences)\n5. Mathematical Isomorphism\n   - Scoring functions (weighted sums)\n   - Layer thresholds (quality-based assignment)\n   - Invalidation logic (staleness detection)\n   - Retrieval optimization (hierarchical search)\n6. Unified Framework\n   - Generic pre-computation algorithm\n   - Applied to both domains\n   - Formal proof of equivalence\n7. Empirical Validation\n   - CDN performance metrics\n   - Realization engine test results (Q=0.8881, 100% retrieval)\n8. Implications\n   - AI systems should use pre-computation for reasoning\n   - Human knowledge can be modeled as cached computation\n   - Cross-pollination of optimization techniques\n9. Related Work\n10. Future Work: Hybrid Human-AI Knowledge Systems\n11. Conclusion\n12. References\n\nEVIDENCE TO INTEGRATE:\n- Realization engine: 8 realizations, avg Q=0.8881\n- Layer thresholds: 0.95/0.92/0.85/0.75\n- Retrieval: O(log n) hierarchical search, 100% accuracy\n- Coherence: 92.9% average consistency\n\nTHEORETICAL GROUNDING:\n- Computer architecture (cache hierarchies)\n- Distributed systems (CAP theorem, eventual consistency)\n- Cognitive psychology (dual process theory)\n- Category theory (functorial mappings)\n\nTARGET VENUE: Science, ACM Computing Surveys, Cognitive Science journal\nLENGTH: 7000-9000 words\n"
+    },
+    {
+      "rank": 2,
+      "title": "The Q-Score Framework: Measuring Realization Quality in AI Systems",
+      "pes_score": 0.9324,
+      "features": {
+        "foundation": 0.92,
+        "clarity": 0.98,
+        "structure": 0.95,
+        "impact": 0.94,
+        "harmony": 0.85,
+        "generativity": 0.9
+      },
+      "prompt": "\nWrite a comprehensive academic research paper on \"The Q-Score Framework: A Multi-Dimensional Quality Metric for Knowledge Realizations in AI Systems\"\n\nCORE THESIS:\nAI systems need a standardized metric for measuring knowledge quality. The Q-score provides:\nQ = 0.18\u00d7G + 0.22\u00d7C + 0.20\u00d7S + 0.18\u00d7A + 0.12\u00d7H + 0.10\u00d7V\n\nWhere G=Grounding, C=Certainty, S=Structure, A=Applicability, H=Coherence, V=Generativity\n\nREQUIRED SECTIONS:\n1. Abstract\n2. Introduction: The Knowledge Quality Problem\n3. Related Work\n   - Precision/recall in ML\n   - F1-scores, AUC-ROC\n   - Semantic similarity metrics\n   - Information quality frameworks\n4. The Q-Score Formula\n   - Six dimensions (G,C,S,A,H,V)\n   - Weight justification (why C=0.22 is highest)\n   - Mathematical properties (bounded, additive)\n5. Feature Definitions\n   - Grounding (0.18): Factual rootedness\n   - Certainty (0.22): Self-certifying knowledge (\"precision auto\")\n   - Structure (0.20): Crystallization clarity\n   - Applicability (0.18): Actionability\n   - Coherence (0.12): Consistency with context\n   - Generativity (0.10): \u0628\u0646\u0627\u062a \u0627\u0641\u0643\u0627\u0631 potential\n6. Layer Thresholds\n   - Layer 0: Q\u22650.95, G\u22650.90 (Universal Rules)\n   - Layer 1: Q\u22650.92 (Domain Facts)\n   - Layer 2: Q\u22650.85 (Patterns)\n   - Layer 3: Q\u22650.75 (Situational)\n   - Layer N: Q<0.75 (Ephemeral)\n7. Validation Study\n   - AI safety conversation (8 realizations)\n   - Q-scores: 0.8246-0.9338 (avg 0.8881)\n   - Inter-rater reliability (if multiple scorers)\n   - Predictive validity (retrieval accuracy: 100%)\n8. Comparison to Existing Metrics\n   - F1-score: Binary classification only\n   - Semantic similarity: No actionability dimension\n   - Citation count: Lagging indicator\n   - Q-score: Multi-dimensional, real-time\n9. Applications\n   - RAG systems (rank retrieved knowledge)\n   - AI training (filter high-Q data)\n   - Knowledge bases (organize by Q-score)\n10. Limitations & Future Work\n11. Conclusion\n12. References\n\nEVIDENCE:\n- 8 realizations scored, validated\n- Highest: Alignment problem (Q=0.9338)\n- Lowest: Sandboxing (Q=0.8246)\n- Average coherence: 92.9%\n- Retrieval accuracy: 100%\n\nTARGET VENUE: ACM SIGKDD, NeurIPS, ICLR\nLENGTH: 6000-8000 words\n"
+    },
+    {
+      "rank": 3,
+      "title": "Computational Epistemology: Realizations as Computable Knowledge Structures",
+      "pes_score": 0.9272,
+      "features": {
+        "foundation": 0.95,
+        "clarity": 0.93,
+        "structure": 0.9,
+        "impact": 0.92,
+        "harmony": 0.95,
+        "generativity": 0.92
+      },
+      "prompt": "\nWrite a comprehensive academic research paper on \"Computational Epistemology: Realizations as Computable Knowledge Structures\"\n\nCORE THESIS:\nKnowledge acquisition moments (realizations) are not ephemeral cognitive events but computable structures that can be:\n1. Quantified via multi-dimensional feature vectors (G,C,S,A,H,V)\n2. Scored using weighted quality functions (Q-scores)\n3. Organized into hierarchical layers (0\u21921\u21922\u21923\u2192N)\n4. Retrieved via graph-based traversal\n5. Reproduced via parent-child relationships (\u0628\u0646\u0627\u062a \u0627\u0641\u0643\u0627\u0631)\n\nREQUIRED SECTIONS:\n1. Abstract (200 words)\n2. Introduction: The Problem of Knowledge Crystallization\n3. Theoretical Framework: From Procedural to Declarative Knowledge\n4. The Q-Score Formula: Mathematics of Realization Quality\n5. Layer Architecture: Hierarchical Knowledge Organization\n6. Generativity: \u0628\u0646\u0627\u062a \u0627\u0641\u0643\u0627\u0631 (Daughters of Ideas) Graph Theory\n7. Implementation: Realization Engine Design\n8. Case Study: AI Safety Conversation Analysis (8 realizations, Q=0.8881 avg)\n9. Validation: Testing & Performance Metrics\n10. Discussion: Implications for AI Epistemology\n11. Related Work: Distributed Systems, Caching, Memory Hierarchies\n12. Future Work: Automated Extraction, Multi-Agent Crystallization\n13. Conclusion\n14. References (30+)\n\nEVIDENCE TO INTEGRATE:\n- Test case: 8 realizations from AI safety discussion\n- Q-scores ranging 0.8246-0.9338\n- 100% retrieval accuracy\n- 92.9% average coherence\n- Layer distribution: 0/1/6/1/0 across layers 0/1/2/3/N\n- Graph depth: 7 levels, 11 parent-child relationships\n- Alignment problem as highest-Q realization (0.9338)\n\nTHEORETICAL GROUNDING:\n- Distributed systems: Pre-computation, caching, CDN architectures\n- Cognitive science: Declarative vs procedural memory\n- Epistemology: Knowledge justification, coherence theory\n- Graph theory: DAGs, knowledge graphs, semantic networks\n\nWRITING STYLE:\n- Rigorous academic tone\n- Mathematical precision (all formulas with derivations)\n- Empirical validation (cite test results)\n- Cross-disciplinary integration\n\nTARGET VENUE: Nature Computational Science, PNAS, or top-tier AI conference\nLENGTH: 8000-10000 words\n"
+    }
+  ]
+}

@@ -128,7 +128,7 @@ def run_training():
     print("="*80)
 
     input_dir = "/kaggle/input/realization-engine-data"
-    hard_data_file = os.path.join(input_dir, "hard_case_study_dataset.json")
+    hard_data_file = os.path.join(input_dir, "realizations", "hard_case_study_dataset.json")
 
     # Load Hard Case Dataset
     if os.path.exists(hard_data_file):
@@ -137,7 +137,7 @@ def run_training():
         print(f"✅ Loaded {len(realizations_list)} hard case realizations.")
     else:
         print("⚠️ hard_case_study_dataset.json not found! Using legacy data.")
-        realizations_file = os.path.join(input_dir, "optimized_realizations_v3.1.json")
+        realizations_file = os.path.join(input_dir, "realizations", "optimized_realizations_v3.1.json")
         if os.path.exists(realizations_file):
             with open(realizations_file, "r") as f:
                 realizations_list = json.load(f)
