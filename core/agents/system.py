@@ -2,6 +2,7 @@
 UQS MULTI-AGENT SYSTEM (V3.2)
 =============================
 Managed multi-agent system for knowledge optimization using the 13-dimension UQS framework.
+Integrated with Metacognitive Monitoring for bias detection and calibration.
 """
 
 import sys
@@ -15,6 +16,7 @@ from enum import Enum
 # Add root to path for imports
 sys.path.append(os.getcwd())
 from core.engine import RealizationEngine, QualityDimension, RealizationFeatures
+from core.agents.metacognition import MetacognitiveMonitor
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -66,7 +68,6 @@ class BaseAgent:
         # Heuristic-based action
         current_score = state.scores.get(self.dimension, 0.5)
 
-        # Emerging and Hard-Case dimensions (D7-D13) are harder to optimize
         is_hard = self.dimension in [
             UQSDimension.DENSITY, UQSDimension.SYNTHESIS,
             UQSDimension.RESILIENCE, UQSDimension.TRANSFERABILITY,
@@ -86,8 +87,9 @@ class MultiAgentCoordinator:
     def __init__(self):
         self.agents = {d: BaseAgent(d) for d in UQSDimension}
         self.engine = RealizationEngine()
+        self.monitor = MetacognitiveMonitor()
 
-        logger.info("Multi-Agent Coordinator initialized with 13 UQS dimensions")
+        logger.info("Multi-Agent Coordinator initialized with 13 UQS dimensions and Metacognitive Monitor")
 
     def optimize_knowledge(self, initial_text: str, target_q: float = 0.90, max_iterations: int = 20) -> Tuple[str, Dict[str, Any]]:
         current_text = initial_text
@@ -98,30 +100,35 @@ class MultiAgentCoordinator:
         for i in range(max_iterations):
             state = RealizationState(text=current_text, scores=current_scores, iteration=i)
 
-            # Agents act in order of weight (highest priority first)
-            sorted_dimensions = sorted(UQSDimension, key=lambda d: UQS_WEIGHTS[d], reverse=True)
+            # 1. Metacognitive Supervision
+            avg_conf = np.mean(list(current_scores.values()))
+            obs = self.monitor.monitor_step(i, current_text, avg_conf)
 
+            if obs.risk_level == "HIGH":
+                logger.warning(f"Metacognitive Warning: {obs.recommendation}")
+
+            # 2. Agent Actions
+            sorted_dimensions = sorted(UQSDimension, key=lambda d: UQS_WEIGHTS[d], reverse=True)
             iteration_actions = []
             for d in sorted_dimensions:
                 agent = self.agents[d]
                 action = agent.act(state)
-
-                # Apply action (simulated)
                 current_scores[d] = min(1.0, current_scores[d] + action['improvement'])
                 iteration_actions.append(action)
 
-            # Calculate new Q-score using the engine
+            # 3. Quality Scoring
             feat_dict = {d.value: current_scores[d] for d in UQSDimension}
             features = RealizationFeatures(scores=feat_dict)
-            q_score, breakdown = self.engine.calculate_q_score(features)
+            q_score, _ = self.engine.calculate_q_score(features)
 
             history.append({
                 "iteration": i,
                 "q_score": q_score,
+                "metacognition": obs,
                 "actions": iteration_actions
             })
 
-            logger.info(f"Iteration {i}: Q-score = {q_score:.4f}")
+            logger.info(f"Iteration {i}: Q-score = {q_score:.4f} | Metacog: {obs.risk_level}")
 
             if q_score >= target_q:
                 logger.info(f"Target Q-score {target_q} reached at iteration {i}")
@@ -132,7 +139,7 @@ class MultiAgentCoordinator:
             content=current_text,
             features=RealizationFeatures(scores={d.value: current_scores[d] for d in UQSDimension}),
             turn_number=max_iterations,
-            context="UQS 13-agent optimization (Hard Case Study Edition)"
+            context="UQS 13-agent optimization with Metacognitive Monitor"
         )
 
         return current_text, {
@@ -140,12 +147,12 @@ class MultiAgentCoordinator:
             "final_q": q_score,
             "iterations": i + 1,
             "history": history,
-            "final_layer": r.layer
+            "final_layer": r.layer,
+            "metacognitive_audit": self.monitor.history
         }
 
 if __name__ == "__main__":
     coordinator = MultiAgentCoordinator()
     optimized, meta = coordinator.optimize_knowledge("Handling adversarial knowledge attacks.")
     print(f"\nFinal Q-score: {meta['final_q']:.4f} (Layer {meta['final_layer']})")
-    print(f"Iterations: {meta['iterations']}")
-    print(f"Realization ID: {meta['realization_id']}")
+    coordinator.monitor.print_audit_trail()
