@@ -4,18 +4,18 @@
   "phases": [
     {
       "name": "Newtonian Paradigm",
-      "avg_q": 0.8184666666666667,
+      "avg_q": 0.8203333333333335,
       "avg_coherence": 1.0
     },
     {
       "name": "Einsteinian Revolution",
-      "avg_q": 0.7523,
+      "avg_q": 0.7548,
       "avg_coherence": 0.21666666666666667,
       "contradiction_count": 3
     },
     {
       "name": "Synthesis",
-      "q_score": 0.8327,
+      "q_score": 0.8342,
       "coherence": 0.95,
       "parents": 2
     }
@@ -35,7 +35,7 @@
     ],
     "einstein": [
       3,
-      "N",
+      3,
       3
     ],
     "synthesis": 3
