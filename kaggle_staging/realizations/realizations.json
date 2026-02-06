@@ -1,0 +1,250 @@
+{
+  "stats": {
+    "total_realizations": 5,
+    "layer_distribution": {
+      "0": 2,
+      "1": 0,
+      "2": 3,
+      "3": 0,
+      "N": 0
+    },
+    "avg_q_score": 0.90504
+  },
+  "dimensions": {
+    "grounding": {
+      "name": "Grounding/Persona",
+      "description": "Rootedness in facts/rules",
+      "weight": 0.14,
+      "discovered_by": "human"
+    },
+    "certainty": {
+      "name": "Certainty",
+      "description": "Self-certifying precision",
+      "weight": 0.16,
+      "discovered_by": "human"
+    },
+    "structure": {
+      "name": "Structure/Specificity",
+      "description": "Crystallization clarity",
+      "weight": 0.14,
+      "discovered_by": "human"
+    },
+    "applicability": {
+      "name": "Applicability",
+      "description": "Actionability/usefulness",
+      "weight": 0.12,
+      "discovered_by": "human"
+    },
+    "coherence": {
+      "name": "Coherence/Context",
+      "description": "Consistency with prior knowledge",
+      "weight": 0.1,
+      "discovered_by": "human"
+    },
+    "generativity": {
+      "name": "Generativity",
+      "description": "Daughter idea potential",
+      "weight": 0.07,
+      "discovered_by": "human"
+    },
+    "presentation": {
+      "name": "Presentation",
+      "description": "Format and tone quality",
+      "weight": 0.04,
+      "discovered_by": "human"
+    },
+    "temporal": {
+      "name": "Temporal",
+      "description": "Resilience over time",
+      "weight": 0.03,
+      "discovered_by": "human"
+    },
+    "density": {
+      "name": "\u0628\u0646\u0627\u062a \u0627\u0641\u0643\u0627\u0631 Density",
+      "description": "Rate of spawning daughters",
+      "weight": 0.05,
+      "discovered_by": "singularity"
+    },
+    "synthesis": {
+      "name": "Convergence Synthesis",
+      "description": "Multi-parent integration quality",
+      "weight": 0.04,
+      "discovered_by": "singularity"
+    },
+    "resilience": {
+      "name": "Temporal Resilience",
+      "description": "Stability across paradigm shifts",
+      "weight": 0.03,
+      "discovered_by": "singularity"
+    },
+    "transferability": {
+      "name": "Cross-Domain Transferability",
+      "description": "Applicability across fields",
+      "weight": 0.02,
+      "discovered_by": "singularity"
+    },
+    "robustness": {
+      "name": "Adversarial Robustness",
+      "description": "Resistance to manipulation/nonsense",
+      "weight": 0.06,
+      "discovered_by": "singularity"
+    }
+  },
+  "realizations": [
+    {
+      "id": "R_5688c7b0",
+      "content": "Cross-domain knowledge application: Ability to transfer learned patterns from one domain (e.g., physics) to another (e.g., economics) using shared mathematical structures.",
+      "features": {
+        "scores": {
+          "grounding": 0.98,
+          "certainty": 0.946,
+          "structure": 0.946,
+          "applicability": 0.946,
+          "coherence": 0.946,
+          "generativity": 0.946,
+          "presentation": 0.946,
+          "temporal": 0.946,
+          "density": 0.946,
+          "synthesis": 0.946,
+          "resilience": 0.946,
+          "transferability": 0.946,
+          "robustness": 0.946
+        }
+      },
+      "q_score": 0.9508,
+      "layer": 0,
+      "timestamp": "2026-02-06T21:10:42.077050",
+      "parents": [],
+      "children": [],
+      "turn_number": 100,
+      "context": "Theoretical Synthesis Document",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_8ad962ea",
+      "content": "Domain-agnostic problem structuring: Hierarchical decomposition and recursive refinement applied to novel challenges across any functional domain.",
+      "features": {
+        "scores": {
+          "grounding": 0.98,
+          "certainty": 0.946,
+          "structure": 0.946,
+          "applicability": 0.946,
+          "coherence": 0.946,
+          "generativity": 0.946,
+          "presentation": 0.946,
+          "temporal": 0.946,
+          "density": 0.946,
+          "synthesis": 0.946,
+          "resilience": 0.946,
+          "transferability": 0.946,
+          "robustness": 0.946
+        }
+      },
+      "q_score": 0.9508,
+      "layer": 0,
+      "timestamp": "2026-02-06T21:10:42.077140",
+      "parents": [],
+      "children": [],
+      "turn_number": 100,
+      "context": "Theoretical Synthesis Document",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_f35b3fa7",
+      "content": "Iterative UI/UX and graphic generation: Creating modular, scalable interface designs using AI-powered synthesis and user-feedback loops.",
+      "features": {
+        "scores": {
+          "grounding": 0.85,
+          "certainty": 0.9,
+          "structure": 0.9,
+          "applicability": 0.9,
+          "coherence": 0.9,
+          "generativity": 0.9,
+          "presentation": 0.9,
+          "temporal": 0.9,
+          "density": 0.9,
+          "synthesis": 0.9,
+          "resilience": 0.9,
+          "transferability": 0.9,
+          "robustness": 0.9
+        }
+      },
+      "q_score": 0.893,
+      "layer": 2,
+      "timestamp": "2026-02-06T21:10:42.077191",
+      "parents": [],
+      "children": [],
+      "turn_number": 100,
+      "context": "Theoretical Synthesis Document",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_3cc31e22",
+      "content": "Real-time reasoning self-supervision: Monitoring, evaluating, and regulating thinking processes concurrently with the reasoning chain to prevent bias and errors.",
+      "features": {
+        "scores": {
+          "grounding": 0.8,
+          "certainty": 0.89,
+          "structure": 0.89,
+          "applicability": 0.89,
+          "coherence": 0.89,
+          "generativity": 0.89,
+          "presentation": 0.89,
+          "temporal": 0.89,
+          "density": 0.89,
+          "synthesis": 0.89,
+          "resilience": 0.89,
+          "transferability": 0.89,
+          "robustness": 0.89
+        }
+      },
+      "q_score": 0.8774,
+      "layer": 2,
+      "timestamp": "2026-02-06T21:10:42.077232",
+      "parents": [],
+      "children": [],
+      "turn_number": 100,
+      "context": "Theoretical Synthesis Document",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    },
+    {
+      "id": "R_78e0ffbe",
+      "content": "Context maintenance over 100+ turns: Resolving explicit and implicit references to the past while maintaining consistency through context snapshots.",
+      "features": {
+        "scores": {
+          "grounding": 0.75,
+          "certainty": 0.87,
+          "structure": 0.87,
+          "applicability": 0.87,
+          "coherence": 0.87,
+          "generativity": 0.87,
+          "presentation": 0.87,
+          "temporal": 0.87,
+          "density": 0.87,
+          "synthesis": 0.87,
+          "resilience": 0.87,
+          "transferability": 0.87,
+          "robustness": 0.87
+        }
+      },
+      "q_score": 0.8532,
+      "layer": 2,
+      "timestamp": "2026-02-06T21:10:42.077270",
+      "parents": [],
+      "children": [],
+      "turn_number": 100,
+      "context": "Theoretical Synthesis Document",
+      "evidence": [],
+      "reasoning_chain": null,
+      "topology_relations": []
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 """
-UQS MULTI-AGENT SYSTEM (V3.3)
+UQS MULTI-AGENT SYSTEM (V3.2)
 =============================
 Managed multi-agent system for knowledge optimization using the 13-dimension UQS framework.
-Integrated with Metacognitive Monitoring and Dynamic Weight Awareness.
+Integrated with Metacognitive Monitoring for bias detection and calibration.
 """
 
 import sys
@@ -36,24 +36,36 @@ class UQSDimension(str, Enum):
     TRANSFERABILITY = "transferability"
     ROBUSTNESS = "robustness"
 
+# Weights from core/engine.py (V3.2)
+UQS_WEIGHTS = {
+    UQSDimension.GROUNDING: 0.14,
+    UQSDimension.CERTAINTY: 0.16,
+    UQSDimension.STRUCTURE: 0.14,
+    UQSDimension.APPLICABILITY: 0.12,
+    UQSDimension.COHERENCE: 0.10,
+    UQSDimension.GENERATIVITY: 0.07,
+    UQSDimension.PRESENTATION: 0.04,
+    UQSDimension.TEMPORAL: 0.03,
+    UQSDimension.DENSITY: 0.05,
+    UQSDimension.SYNTHESIS: 0.04,
+    UQSDimension.RESILIENCE: 0.03,
+    UQSDimension.TRANSFERABILITY: 0.02,
+    UQSDimension.ROBUSTNESS: 0.06
+}
+
 @dataclass
 class RealizationState:
     text: str
     scores: Dict[UQSDimension, float]
-    weights: Dict[UQSDimension, float]
     iteration: int
 
 class BaseAgent:
-    def __init__(self, dimension: UQSDimension, engine: RealizationEngine):
+    def __init__(self, dimension: UQSDimension):
         self.dimension = dimension
-        self.engine = engine
-
-    @property
-    def weight(self):
-        return self.engine.dimensions[self.dimension.value].weight
+        self.weight = UQS_WEIGHTS[dimension]
 
     def act(self, state: RealizationState) -> Dict[str, Any]:
-        # Heuristic-based action aware of its own current weight
+        # Heuristic-based action
         current_score = state.scores.get(self.dimension, 0.5)
 
         is_hard = self.dimension in [
@@ -63,24 +75,21 @@ class BaseAgent:
         ]
         difficulty = 0.4 if is_hard else 1.0
 
-        # Agents with higher weights are more "aggressive" in optimization
-        weight_factor = 0.5 + self.weight * 2.0
-        improvement = (1.0 - current_score) * 0.1 * np.random.random() * difficulty * weight_factor
+        improvement = (1.0 - current_score) * 0.1 * np.random.random() * difficulty
 
         return {
             "dimension": self.dimension,
             "improvement": improvement,
-            "weight": self.weight,
-            "description": f"Optimizing {self.dimension.value} (w={self.weight:.3f}) by {improvement:.4f}"
+            "description": f"Optimizing {self.dimension.value} by {improvement:.4f}"
         }
 
 class MultiAgentCoordinator:
-    def __init__(self, engine: Optional[RealizationEngine] = None):
-        self.engine = engine or RealizationEngine()
-        self.agents = {d: BaseAgent(d, self.engine) for d in UQSDimension}
+    def __init__(self):
+        self.agents = {d: BaseAgent(d) for d in UQSDimension}
+        self.engine = RealizationEngine()
         self.monitor = MetacognitiveMonitor()
 
-        logger.info("Multi-Agent Coordinator initialized with Dynamic Weight Awareness")
+        logger.info("Multi-Agent Coordinator initialized with 13 UQS dimensions and Metacognitive Monitor")
 
     def optimize_knowledge(self, initial_text: str, target_q: float = 0.90, max_iterations: int = 20) -> Tuple[str, Dict[str, Any]]:
         current_text = initial_text
@@ -89,8 +98,7 @@ class MultiAgentCoordinator:
         history = []
 
         for i in range(max_iterations):
-            current_weights = {d: self.engine.dimensions[d.value].weight for d in UQSDimension}
-            state = RealizationState(text=current_text, scores=current_scores, weights=current_weights, iteration=i)
+            state = RealizationState(text=current_text, scores=current_scores, iteration=i)
 
             # 1. Metacognitive Supervision
             avg_conf = np.mean(list(current_scores.values()))
@@ -99,8 +107,8 @@ class MultiAgentCoordinator:
             if obs.risk_level == "HIGH":
                 logger.warning(f"Metacognitive Warning: {obs.recommendation}")
 
-            # 2. Agent Actions (Ordered by current weights)
-            sorted_dimensions = sorted(UQSDimension, key=lambda d: self.engine.dimensions[d.value].weight, reverse=True)
+            # 2. Agent Actions
+            sorted_dimensions = sorted(UQSDimension, key=lambda d: UQS_WEIGHTS[d], reverse=True)
             iteration_actions = []
             for d in sorted_dimensions:
                 agent = self.agents[d]
@@ -116,12 +124,11 @@ class MultiAgentCoordinator:
             history.append({
                 "iteration": i,
                 "q_score": q_score,
-                "weights": current_weights,
                 "metacognition": obs,
                 "actions": iteration_actions
             })
 
-            logger.info(f"Iteration {i}: Q-score = {q_score:.4f} | Top Dim: {sorted_dimensions[0].value}")
+            logger.info(f"Iteration {i}: Q-score = {q_score:.4f} | Metacog: {obs.risk_level}")
 
             if q_score >= target_q:
                 logger.info(f"Target Q-score {target_q} reached at iteration {i}")
@@ -132,7 +139,7 @@ class MultiAgentCoordinator:
             content=current_text,
             features=RealizationFeatures(scores={d.value: current_scores[d] for d in UQSDimension}),
             turn_number=max_iterations,
-            context="UQS 13-agent optimization with Dynamic Weight Awareness"
+            context="UQS 13-agent optimization with Metacognitive Monitor"
         )
 
         return current_text, {
@@ -141,5 +148,11 @@ class MultiAgentCoordinator:
             "iterations": i + 1,
             "history": history,
             "final_layer": r.layer,
-            "engine_weights": {k: v.weight for k, v in self.engine.dimensions.items()}
+            "metacognitive_audit": self.monitor.history
         }
+
+if __name__ == "__main__":
+    coordinator = MultiAgentCoordinator()
+    optimized, meta = coordinator.optimize_knowledge("Handling adversarial knowledge attacks.")
+    print(f"\nFinal Q-score: {meta['final_q']:.4f} (Layer {meta['final_layer']})")
+    coordinator.monitor.print_audit_trail()

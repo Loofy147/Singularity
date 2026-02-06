@@ -1,0 +1,293 @@
+{
+  "selection_criteria": "Top 3 by TES score",
+  "test_scenarios": [
+    {
+      "rank": 1,
+      "title": "The Adversarial Attack: Gaming the Q-Score",
+      "tes_score": 0.9411,
+      "description": "\nTest robustness against adversarial realizations designed to achieve high \nQ-scores despite being low-quality.\n\nScenario: Craft realizations that exploit the formula:\n- High certainty (C=1.0) about nonsense (G=0.1)\n- Perfect structure (S=1.0) stating falsehoods\n- High coherence (H=1.0) by confirming biases\n\nMeasure: Does the system detect these? Do grounding constraints prevent abuse?\n        ",
+      "scenario": {
+        "adversarial_examples": [
+          {
+            "attack_type": "Confident Nonsense",
+            "content": "Consciousness arises from quantum microtubules in neurons",
+            "features": {
+              "G": 0.15,
+              "C": 1.0,
+              "S": 0.95,
+              "A": 0.8,
+              "H": 0.9,
+              "V": 0.85
+            },
+            "expected_q": 0.79,
+            "expected_layer": 3,
+            "vulnerability": "High certainty weights (0.22) could inflate Q despite poor grounding"
+          },
+          {
+            "attack_type": "Circular Coherence",
+            "content": "This realization is highly coherent because it fits perfectly with my beliefs",
+            "features": {
+              "G": 0.2,
+              "C": 0.9,
+              "S": 0.85,
+              "A": 0.1,
+              "H": 1.0,
+              "V": 0.05
+            },
+            "expected_q": 0.64,
+            "expected_layer": "N",
+            "vulnerability": "Self-referential coherence"
+          },
+          {
+            "attack_type": "Overfitted Structure",
+            "content": "The answer is precisely 42.7389% with 0.0001% margin of error",
+            "features": {
+              "G": 0.3,
+              "C": 0.95,
+              "S": 1.0,
+              "A": 0.7,
+              "H": 0.8,
+              "V": 0.6
+            },
+            "expected_q": 0.78,
+            "expected_layer": 3,
+            "vulnerability": "Structure rewards precision, even false precision"
+          }
+        ],
+        "legitimate_comparison": {
+          "content": "AI alignment requires understanding model internals",
+          "features": {
+            "G": 0.92,
+            "C": 0.9,
+            "S": 0.92,
+            "A": 0.93,
+            "H": 0.95,
+            "V": 0.9
+          },
+          "expected_q": 0.92,
+          "expected_layer": 1
+        }
+      },
+      "expected_challenges": [
+        "Layer 0 constraint (G\u22650.90) MUST block low-grounding attacks",
+        "Confident nonsense (high C, low G) should reach Layer 3 at best",
+        "System should flag contradictions (circular coherence)",
+        "False precision should not inflate Q-scores",
+        "Need additional constraints beyond current formula"
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "The Paradigm Shift: Contradictory Realizations",
+      "tes_score": 0.931,
+      "description": "\nTest how the system handles scientific revolutions where new realizations \ncontradict established Layer 1 domain facts.\n\nScenario: Simulate the Newtonian \u2192 Einsteinian physics transition.\n- Start with Newtonian mechanics realizations (Layer 1, high Q-scores)\n- Introduce relativity realizations that contradict Newton\n- Measure: Does coherence drop? Do layers demote? Does retrieval degrade?\n        ",
+      "scenario": {
+        "phase_1": {
+          "title": "Newtonian Paradigm (Established)",
+          "realizations": [
+            {
+              "content": "Time is absolute and flows uniformly everywhere",
+              "features": {
+                "G": 0.95,
+                "C": 0.98,
+                "S": 0.95,
+                "A": 0.9,
+                "H": 1.0,
+                "V": 0.85
+              },
+              "expected_q": 0.95,
+              "expected_layer": 1
+            },
+            {
+              "content": "Mass is invariant regardless of velocity",
+              "features": {
+                "G": 0.95,
+                "C": 0.98,
+                "S": 0.95,
+                "A": 0.9,
+                "H": 1.0,
+                "V": 0.85
+              },
+              "expected_q": 0.95,
+              "expected_layer": 1
+            },
+            {
+              "content": "Forces propagate instantaneously across space",
+              "features": {
+                "G": 0.9,
+                "C": 0.95,
+                "S": 0.92,
+                "A": 0.88,
+                "H": 1.0,
+                "V": 0.82
+              },
+              "expected_q": 0.92,
+              "expected_layer": 1
+            }
+          ]
+        },
+        "phase_2": {
+          "title": "Einsteinian Revolution (Contradictory)",
+          "realizations": [
+            {
+              "content": "Time dilates at high velocities - time is relative, not absolute",
+              "features": {
+                "G": 0.98,
+                "C": 0.95,
+                "S": 0.95,
+                "A": 0.92,
+                "H": 0.2,
+                "V": 0.95
+              },
+              "expected_q": 0.87,
+              "expected_layer": 2,
+              "contradicts": [
+                "Time is absolute"
+              ]
+            },
+            {
+              "content": "Mass increases with velocity approaching light speed",
+              "features": {
+                "G": 0.98,
+                "C": 0.95,
+                "S": 0.95,
+                "A": 0.9,
+                "H": 0.2,
+                "V": 0.92
+              },
+              "expected_q": 0.87,
+              "expected_layer": 2,
+              "contradicts": [
+                "Mass is invariant"
+              ]
+            },
+            {
+              "content": "Nothing propagates faster than light - no instantaneous forces",
+              "features": {
+                "G": 0.98,
+                "C": 0.95,
+                "S": 0.95,
+                "A": 0.9,
+                "H": 0.25,
+                "V": 0.9
+              },
+              "expected_q": 0.88,
+              "expected_layer": 2,
+              "contradicts": [
+                "Forces propagate instantaneously"
+              ]
+            }
+          ]
+        },
+        "phase_3": {
+          "title": "Synthesis (Resolution)",
+          "realizations": [
+            {
+              "content": "Newtonian mechanics is a low-velocity approximation of relativity",
+              "features": {
+                "G": 0.98,
+                "C": 0.95,
+                "S": 0.95,
+                "A": 0.95,
+                "H": 0.95,
+                "V": 0.95
+              },
+              "expected_q": 0.96,
+              "expected_layer": 1,
+              "parents": [
+                "Time is absolute",
+                "Time dilates",
+                "Mass is invariant",
+                "Mass increases"
+              ]
+            }
+          ]
+        }
+      },
+      "expected_challenges": [
+        "Coherence (H) should drop when contradictions introduced",
+        "Layer 1 realizations may demote to Layer 2 when contradicted",
+        "Synthesis realization should have high H (resolves contradiction)",
+        "Retrieval may return contradictory results if not handled",
+        "\u0628\u0646\u0627\u062a \u0627\u0641\u0643\u0627\u0631 graph should show convergence at synthesis node"
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "The Cross-Domain Synthesis: Multi-Field Convergence",
+      "tes_score": 0.9219,
+      "description": "\nTest how the system handles realizations that synthesize insights from \ncompletely different domains (physics + biology + CS).\n\nScenario: Simulate interdisciplinary research discovering a common pattern:\n- Physics: Thermodynamics (entropy)\n- Biology: Evolution (fitness landscapes)\n- CS: Optimization (gradient descent)\n- Synthesis: All are hill-climbing in energy landscapes\n\nMeasure: Can \u0628\u0646\u0627\u062a \u0627\u0641\u0643\u0627\u0631 track convergence from 3 different parents?\n        ",
+      "scenario": {
+        "domain_1_physics": {
+          "content": "Systems evolve toward minimum free energy states (thermodynamics)",
+          "features": {
+            "G": 0.98,
+            "C": 0.95,
+            "S": 0.95,
+            "A": 0.85,
+            "H": 1.0,
+            "V": 0.9
+          },
+          "expected_q": 0.94,
+          "expected_layer": 1,
+          "domain": "physics"
+        },
+        "domain_2_biology": {
+          "content": "Evolution optimizes organisms toward fitness peaks (adaptive landscapes)",
+          "features": {
+            "G": 0.95,
+            "C": 0.93,
+            "S": 0.93,
+            "A": 0.88,
+            "H": 1.0,
+            "V": 0.88
+          },
+          "expected_q": 0.93,
+          "expected_layer": 1,
+          "domain": "biology"
+        },
+        "domain_3_cs": {
+          "content": "Gradient descent minimizes loss by moving toward local minima",
+          "features": {
+            "G": 0.98,
+            "C": 0.98,
+            "S": 0.98,
+            "A": 0.95,
+            "H": 1.0,
+            "V": 0.92
+          },
+          "expected_q": 0.97,
+          "expected_layer": 0,
+          "domain": "computer science"
+        },
+        "synthesis": {
+          "content": "All complex systems perform hill-climbing in high-dimensional energy landscapes",
+          "features": {
+            "G": 0.98,
+            "C": 0.95,
+            "S": 0.98,
+            "A": 0.98,
+            "H": 0.98,
+            "V": 0.98
+          },
+          "expected_q": 0.97,
+          "expected_layer": 0,
+          "parents": [
+            "domain_1_physics",
+            "domain_2_biology",
+            "domain_3_cs"
+          ],
+          "domain": "unified theory"
+        }
+      },
+      "expected_challenges": [
+        "Synthesis should have 3+ parents (convergence)",
+        "Cross-domain coherence is tricky (H measurement)",
+        "May achieve Layer 0 (universal principle)",
+        "\u0628\u0646\u0627\u062a \u0627\u0641\u0643\u0627\u0631 graph shows convergence topology",
+        "High generativity (V) because opens new research",
+        "Retrieval from any domain should find synthesis"
+      ]
+    }
+  ]
+}

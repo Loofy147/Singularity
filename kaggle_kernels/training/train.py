@@ -9,8 +9,9 @@ from enum import Enum
 from typing import Dict, List, Optional, Tuple, Any, Union
 import hashlib
 from collections import defaultdict
+import random
 
-# --- BUNDLED CORE LOGIC (V3.2 - ROBUST UQS) ---
+# --- BUNDLED CORE LOGIC (V3.3 - EVOLVED UQS) ---
 
 class ComputeTier(str, Enum):
     LOW = "low"
@@ -58,7 +59,7 @@ class RealizationEngine:
         'robustness': QualityDimension('Adversarial Robustness', 'Resistance', 0.06, 'singularity')
     }
     def __init__(self, dimensions=None):
-        self.dimensions = dimensions or self.UQS_DIMENSIONS.copy()
+        self.dimensions = dimensions or {k: QualityDimension(v.name, v.description, v.weight, v.discovered_by) for k, v in self.UQS_DIMENSIONS.items()}
 
     def calculate_q_score(self, features: RealizationFeatures) -> Tuple[float, str]:
         features.validate()
@@ -66,6 +67,41 @@ class RealizationEngine:
         norm = 1.0 / total_weight if abs(total_weight - 1.0) > 0.001 else 1.0
         total_q = sum(self.dimensions[k].weight * features.scores.get(k, 0.5) * norm for k in self.dimensions)
         return round(total_q, 4), ""
+
+class SingularityEvolution:
+    """Bundled meta-optimization logic for dynamic weights."""
+    def __init__(self, engine: RealizationEngine):
+        self.engine = engine
+        self.momentum = 0.9
+
+    def adapt_weights(self, batch_realizations: List[Dict]):
+        # Filter for high quality realizations in the batch
+        q_scores = []
+        for r in batch_realizations:
+            q, _ = self.engine.calculate_q_score(RealizationFeatures(scores=r.get('features', {}).get('scores', {})))
+            q_scores.append(q)
+
+        threshold = np.mean(q_scores)
+        high_quality = [r for i, r in enumerate(batch_realizations) if q_scores[i] >= threshold]
+
+        if not high_quality: return
+
+        dim_importance = {}
+        for key in self.engine.dimensions:
+            avg_score = np.mean([r.get('features', {}).get('scores', {}).get(key, 0.5) for r in high_quality])
+            dim_importance[key] = avg_score * self.engine.dimensions[key].weight
+
+        total_importance = sum(dim_importance.values())
+        if total_importance == 0: return
+
+        for key in self.engine.dimensions:
+            target_weight = dim_importance[key] / total_importance
+            self.engine.dimensions[key].weight = (self.engine.dimensions[key].weight * self.momentum) + (target_weight * (1 - self.momentum))
+
+        # Normalize
+        norm_sum = sum(d.weight for d in self.engine.dimensions.values())
+        for d in self.engine.dimensions.values():
+            d.weight /= norm_sum
 
 class NextGenPESAgent:
     def __init__(self, dimension, weight, state_dim, action_dim):
@@ -108,7 +144,7 @@ class NextGenPESAgent:
         })
 
     def get_metrics(self):
-        if not self.performance_log: return {}
+        if not self.performance_log: return {'mae': 1.0, 'mean_improvement': 0.0}
         errors = [x['error'] for x in self.performance_log]
         improvements = [x['actual'] for x in self.performance_log]
         total = sum(self.tier_history.values())
@@ -124,110 +160,136 @@ class NextGenPESAgent:
 
 def run_training():
     print("="*80)
-    print("🌌 REALIZATION ENGINE: HARD CASE STUDY TRAINING SESSION (V3.2)")
+    print("🌌 REALIZATION ENGINE: CROSS-VALIDATED TRAINING SESSION (V3.3)")
     print("="*80)
 
     input_dir = "/kaggle/input/realization-engine-data"
-    hard_data_file = os.path.join(input_dir, "hard_case_study_dataset.json")
+    hard_data_file = os.path.join(input_dir, "realizations", "hard_case_study_dataset.json")
 
     # Load Hard Case Dataset
     if os.path.exists(hard_data_file):
         with open(hard_data_file, "r") as f:
-            realizations_list = json.load(f)
-        print(f"✅ Loaded {len(realizations_list)} hard case realizations.")
+            full_dataset = json.load(f)
+        print(f"✅ Loaded {len(full_dataset)} hard case realizations.")
     else:
-        print("⚠️ hard_case_study_dataset.json not found! Using legacy data.")
-        realizations_file = os.path.join(input_dir, "optimized_realizations_v3.1.json")
-        if os.path.exists(realizations_file):
-            with open(realizations_file, "r") as f:
-                realizations_list = json.load(f)
-        else:
-            realizations_list = [{'content': 'Synthetic Hard Case', 'features': {'scores': {}}}] * 15
+        print("⚠️ hard_case_study_dataset.json not found! Generating synthetic.")
+        full_dataset = [{'id': f'SYN_{i}', 'content': f'Synthetic {i}', 'features': {'scores': {k: random.random() for k in RealizationEngine.UQS_DIMENSIONS}}} for i in range(50)]
 
-    # Initialize Engine and Agent
+    # CROSS-VALIDATION SPLIT (80/20)
+    random.shuffle(full_dataset)
+    split_idx = int(len(full_dataset) * 0.8)
+    train_data = full_dataset[:split_idx]
+    val_data = full_dataset[split_idx:]
+    print(f"📊 Dataset split: Train={len(train_data)}, Val={len(val_data)}")
+
+    # Initialize Engine, Evolver, and Agent
     engine = RealizationEngine()
-    # State Vector: 512 (emb) + 13 (scores) + 2 (meta) + 11 (padding) = 538
-    agent = NextGenPESAgent(dimension="P", weight=0.20, state_dim=538, action_dim=3)
+    evolver = SingularityEvolution(engine)
+
+    # State Vector: 512 (emb) + 13 (scores) + 13 (weights) + 2 (meta) = 540
+    agent = NextGenPESAgent(dimension="P", weight=0.20, state_dim=540, action_dim=3)
 
     epochs = 150
     batch_size = 4
-    print(f"🚀 Training for {epochs} epochs on HARD cases...")
+    print(f"🚀 Training for {epochs} epochs with Dynamic Weight Adaptation...")
 
-    training_history = []
+    history = []
 
     for epoch in range(epochs):
-        epoch_metrics = []
+        # 1. Training Phase
+        train_metrics = []
+        random.shuffle(train_data)
 
-        for i in range(0, len(realizations_list), batch_size):
-            batch = realizations_list[i:i+batch_size]
+        for i in range(0, len(train_data), batch_size):
+            batch = train_data[i:i+batch_size]
+
+            # ADAPT WEIGHTS periodically
+            if epoch % 5 == 0 and i == 0:
+                evolver.adapt_weights(batch)
+
             for r in batch:
                 scores = r.get('features', {}).get('scores', {})
-                state_scores = [scores.get(k, 0.5) for k in engine.UQS_DIMENSIONS.keys()]
+                current_weights = [engine.dimensions[k].weight for k in engine.dimensions]
+                state_scores = [scores.get(k, 0.5) for k in engine.dimensions]
 
                 content = r.get('content', '')
                 h = int(hashlib.md5(content.encode()).hexdigest(), 16) % 10**8
-                np.random.seed(h + epoch) # Dynamic seed per epoch
+                np.random.seed(h + epoch)
                 mock_emb = np.random.randn(512)
 
-                # ADVERSARIAL NOISE INJECTION
-                # If it's an adversarial attack, inject more noise
-                noise_scale = 0.05
-                if "ADV" in r.get('id', ''):
-                    noise_scale = 0.2
-                    # Simulate attack: inflate certainty and structure
-                    state_scores[1] = min(1.0, state_scores[1] + 0.1)
-                    state_scores[2] = min(1.0, state_scores[2] + 0.1)
+                # State now includes weights for awareness
+                state_vector = np.concatenate([mock_emb, state_scores, current_weights, [100, epoch]])
 
-                state_vector = np.concatenate([mock_emb, state_scores, [100, epoch], np.zeros(11)])
+                # Noise Injection
+                noise_scale = 0.05 if "ADV" not in r.get('id', '') else 0.2
                 state_vector += np.random.normal(0, noise_scale, state_vector.shape)
 
-                # Agent Action
                 v_action = agent.get_action_with_reasoning(state_vector)
 
-                # ENVIRONMENT FEEDBACK (Robustness reward)
-                # High robustness score (D13) yields higher improvement
                 robustness = scores.get('robustness', 0.5)
                 q_score, _ = engine.calculate_q_score(RealizationFeatures(scores=scores))
-
-                # Reward agents that maintain quality despite adversarial noise
                 target_improvement = (robustness * 0.1) + ((1.0 - q_score) * 0.05)
                 actual_imp = v_action.predicted_improvement + np.random.normal(target_improvement, 0.01)
 
                 agent.log_performance(v_action, actual_imp)
-                epoch_metrics.append(actual_imp)
+                train_metrics.append(actual_imp)
 
-        avg_epoch_imp = float(np.mean(epoch_metrics))
-        training_history.append({
+        # 2. Validation Phase
+        val_metrics = []
+        with torch.no_grad():
+            for r in val_data:
+                scores = r.get('features', {}).get('scores', {})
+                current_weights = [engine.dimensions[k].weight for k in engine.dimensions]
+                state_scores = [scores.get(k, 0.5) for k in engine.dimensions]
+
+                content = r.get('content', '')
+                mock_emb = np.random.randn(512)
+                state_vector = np.concatenate([mock_emb, state_scores, current_weights, [100, epoch]])
+
+                v_action = agent.get_action_with_reasoning(state_vector)
+                q_score, _ = engine.calculate_q_score(RealizationFeatures(scores=scores))
+                target_improvement = (scores.get('robustness', 0.5) * 0.1) + ((1.0 - q_score) * 0.05)
+                val_metrics.append(abs(v_action.predicted_improvement - target_improvement))
+
+        avg_train_imp = float(np.mean(train_metrics))
+        avg_val_mae = float(np.mean(val_metrics))
+
+        history.append({
             'epoch': epoch,
-            'avg_improvement': avg_epoch_imp,
-            'metrics': agent.get_metrics()
+            'train_improvement': avg_train_imp,
+            'val_mae': avg_val_mae,
+            'weights': {k: v.weight for k, v in engine.dimensions.items()}
         })
 
         if epoch % 15 == 0:
-            print(f"Epoch {epoch:03d}: Imp = {avg_epoch_imp:+.6f} | MAE = {training_history[-1]['metrics']['mae']:.6f}")
+            print(f"Epoch {epoch:03d}: Train_Imp = {avg_train_imp:+.4f} | Val_MAE = {avg_val_mae:.4f} | TopWeight = {max(current_weights):.4f}")
 
     # Finalize
-    final_metrics = agent.get_metrics()
     print("\n" + "="*40)
-    print("FINAL HARD CASE TRAINING METRICS")
+    print("FINAL EVOLVED TRAINING METRICS")
     print("="*40)
-    print(f"Mean Improvement: {final_metrics['mean_improvement']:.6f}")
-    print(f"Robustness Score (Inferred): {1.0 - final_metrics['mae']:.6f}")
-    print(f"Tier Usage: {final_metrics['tier_distribution']}")
+    final_agent_metrics = agent.get_metrics()
+    print(f"Mean Train Improvement: {final_agent_metrics['mean_improvement']:.6f}")
+    print(f"Final Val MAE: {history[-1]['val_mae']:.6f}")
+
+    # Determine the most influential dimension after evolution
+    sorted_dims = sorted(engine.dimensions.items(), key=lambda x: x[1].weight, reverse=True)
+    print(f"Most Influential Dimension: {sorted_dims[0][0]} ({sorted_dims[0][1].weight:.4f})")
 
     results = {
         "timestamp": time.time(),
-        "config": {"epochs": epochs, "batch_size": batch_size, "dimensions": 13, "mode": "HARD_CASE_ROBUST"},
-        "final_metrics": final_metrics,
-        "history": training_history,
+        "config": {"epochs": epochs, "batch_size": batch_size, "dimensions": 13, "mode": "CROSS_VAL_DYNAMIC"},
+        "final_metrics": {**final_agent_metrics, "final_val_mae": history[-1]['val_mae']},
+        "history": history,
+        "evolved_weights": {k: v.weight for k, v in engine.dimensions.items()},
         "status": "SUCCESS"
     }
 
-    with open("hard_case_training_results.json", "w") as f:
+    with open("evolved_training_results.json", "w") as f:
         json.dump(results, f, indent=2)
 
-    torch.save(agent.policy_net.state_dict(), "uqs_robust_agent_v3.2.pt")
-    print("\n✅ Hard case study training complete. Artifacts saved.")
+    torch.save(agent.policy_net.state_dict(), "uqs_evolved_agent_v3.3.pt")
+    print("\n✅ Evolved training complete. Artifacts saved.")
 
 if __name__ == "__main__":
     run_training()
